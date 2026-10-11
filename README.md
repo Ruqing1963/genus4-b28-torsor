@@ -1,4 +1,6 @@
-# octad_lab
+# genus4-b28-torsor (octad_lab)
+
+Ruqing Chen (GUT Geoservice Inc., Montreal). Paper: *The degree-28 polynomial of a genus-4 linearised operator, the quadratic-form torsor, and the symplectic monodromy Sp6(F2)*, DOI [10.5281/zenodo.23306002](https://doi.org/10.5281/zenodo.23306002). Repository: https://github.com/Ruqing1963/genus4-b28-torsor. License: text CC BY 4.0, code MIT.
 
 Independent exploration (not part of the Legendre-interval series Parts I–IV): the 63-point geometry of an octad, O6+(2) ≅ S8 inside Sp6(F2), and the genus-4 Artin–Schreier family y² + y = λ9x⁹ + λ5x⁵ + λ3x³ + λ1x whose polar operator has a six-dimensional kernel.
 

@@ -175,7 +175,8 @@ def analyse(genus, k, l5, l3, verbose=True, lt=1):
     assert all(cc in fam.back for cc in Fp)
     Fp_q = [fam.back[cc] for cc in Fp]
     res = dict(m=m, sizes=(len(Cp), len(Cm)), stable=stable, qf=qf_ok, same_omega=same_omega, alt=alt, nondeg=nondeg,
-               arf=arf_ok, intrinsic=intrinsic_ok, Fplus=Fp_q, E=E, fam=fam, C=C, eps=eps, K=Klist)
+               arf=arf_ok, intrinsic=intrinsic_ok, Fplus=Fp_q, E=E, fam=fam, C=C, eps=eps, K=Klist, omega=omega_ref,
+               n=n, k=k)
     if verbose:
         print(f"  (l5,l3)=({l5},{l3}): Frob order {m:2d}, |C_+|={len(Cp)}, |C_-|={len(Cm)}, eps Frobenius-stable {stable}, "
               f"Q_P quadratic {qf_ok}, polar form independent of P {same_omega}, alternating {alt}, nondegenerate {nondeg}, "

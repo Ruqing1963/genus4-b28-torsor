@@ -34,13 +34,15 @@
 \newcommand{\Tw}{\mathsf{T}}
 \newcommand{\Fq}{\F_{q}}
 \allowdisplaybreaks
+\raggedbottom
 \emergencystretch=2em
 
 \title[The degree-28 polynomial and the quadratic-form torsor]{The degree-28 polynomial of a genus-4 linearised operator, the quadratic-form torsor, and the symplectic monodromy \texorpdfstring{$\Sp_6(\F_2)$}{Sp6(F2)}}
 \author{Ruqing Chen}
 \address{GUT Geoservice Inc., Montreal, Canada}
 \email{ruqing@hotmail.com}
-\thanks{Working draft. Code and data: directory \texttt{octad\_lab} of the author's Legendre-interval project; the scripts named in Section~\ref{sec:comp} reproduce every number in this paper.}
+\thanks{DOI 10.5281/zenodo.23306002. The scripts named in Section~\ref{sec:comp} reproduce every number in this paper.}
+\thanks{Code and data: \url{https://github.com/Ruqing1963/genus4-b28-torsor}}
 \date{\today}
 
 \begin{document}
@@ -214,6 +216,20 @@ By Lemmas~\ref{lem:polar} and \ref{lem:trace0}, $\qq^{(m)}_\lambda(w_0+k)=\qq^{(
 
 For $q=2$ one finds $s_{14}(1,1,1,\lambda_1)=\mp1024\,i$ and $s_{18}(1,0,0,\lambda_1)=\pm4096\,i$ ($\lambda_1=0,1$), in accordance with $8\cdot2^7$ and $8\cdot2^9$.
 
+\begin{theorem}[trace parity]\label{thm:traceparity}
+For every $m\ge1$ and every $w\in\Cc_\lambda\cap\F_{q^m}$,
+\[
+\Tr_{q^m/2}(w)\equiv mk+f_m\pmod 2,\qquad f_m=\dim_{\F_2}(\Kk_\lambda\cap\F_{q^m}).
+\]
+\end{theorem}
+\begin{proof}
+Put $U=\F_{q^m}$, $N=mk$, $K_m=\Kk_\lambda\cap U$. For $\mu\in U$ let $\qq'(x)=\qq^{(m)}_\lambda(x)+2\Tr_{U/\F_2}(\mu x)$; this is a $\Z/4$-valued quadratic form on $U$ with the same polar form $2\Tr(yT'_\lambda(x))$, hence with radical $K_m$, on which it is additive with values in $\{0,2\}$ (Lemma~\ref{lem:trace0}). Choose $\mu$ with $\Tr_{U/\F_2}(\mu k)=\frac12\qq^{(m)}_\lambda(k)$ for $k\in K_m$ (possible, since $k\mapsto\Tr_{U/\F_2}(\mu k)$ runs through all linear forms of $U$); then $\qq'$ vanishes on $K_m$, and by Brown's theorem \cite{Brown} $s'=\sum_{x\in U}i^{\qq'(x)}$ satisfies $|s'|^2=2^{N+f_m}$. For $w\in\Cc_\lambda\cap U$, Lemma~\ref{lem:polar} and the symmetry of the polar form give $\qq'(x+w)=\qq'(x)+\qq'(w)+2\Tr_{U/\F_2}(xT'_\lambda(w))=\qq'(x)+\qq'(w)+2\Tr_{U/\F_2}(x)$, and $i^{2\Tr(x)}=(-1)^{\qq'(x)}=i^{-2\qq'(x)}$; summing over $x$, $s'=i^{\qq'(w)}\,\overline{s'}$, so $s'^2=i^{\qq'(w)}2^{N+f_m}$. Write $s'=a+bi$ with $a,b\in\Z$. If $\qq'(w)$ is even, $ab=0$ and $a^2-b^2=\pm2^{N+f_m}$ forces $N+f_m$ even; if $\qq'(w)$ is odd, $a^2=b^2$ and $2ab=\pm2^{N+f_m}$ forces $N+f_m$ odd. Thus $\qq'(w)\equiv N+f_m$, and $\qq'(w)\equiv\Tr_{U/\F_2}(w)\pmod 2$.
+\end{proof}
+
+\begin{remark}
+In Part~IV, Theorem~3.5, the same statement for genus~$2$ was proved under the hypothesis that $s_m(\lambda_1')\ne0$ for some $\lambda_1'\in\Fq$; taking the auxiliary linear term $\mu$ in $\F_{q^m}$ instead of $\Fq$ removes the hypothesis there as well. The value $mk+f_m$ depends only on the Frobenius type: $f_m=\dim\ker(F^m-1)$ on $\Kk_\lambda$. The congruence was checked on every rational point of every coset for $q=2,4,8$ and all $m\le n$ (script \texttt{trace\_parity\_g4.py}).
+\end{remark}
+
 \begin{remark}[genus 2]
 With the quartic operator of Part~III the same proof gives: $\omega_\lambda$ canonical on the four-dimensional $\Kk_\lambda$, $\Cc_\lambda$ the torsor of quadratic forms, the six roots of the sextic $B_\lambda$ the forms of Arf invariant $1$ ($6=2^3-2$ zeros), the ten synthematic totals the forms of Arf invariant $0$ ($10=2^3+2$). The hexad formula of Part~IV is thus the statement $\eps(w)=-(-1)^{\Arf Q_w}$, and the sixteen-point lemma of Part~IV is Corollary~\ref{cor:64} with $\pm4$.
 \end{remark}
@@ -292,10 +308,95 @@ Let $E$ be an $8$-set. The even subsets of $E$ modulo complement form $V_8=\F_2^
 
 So the $28$ roots of $B_\lambda$ are the duads of any octad through a plus-type point, which is why they, and not eight points, form the canonical configuration; and a parameter has octads only when its Frobenius type lies in $S_8$, which Proposition~\ref{prop:stats} says happens for $79\%$ of the parameters, while $B_\lambda$ and the torsor exist for all of them.
 
+\section{The sign laws on the 24 Frobenius types}\label{sec:signs}
+
+Let $n$ be the order of $F$ on $\Kk_\lambda$ and, for $m\ge1$, $K_m=\Kk_\lambda\cap\F_{q^m}=\ker(F^m-1)$, $f_m=\dim K_m$, $\Cc_m=\Cc_\lambda\cap\F_{q^m}$, and $r_m=\dim\rad(\omega_\lambda|_{K_m})$. By Section~\ref{sec:frob} (rational points of the coset), $\Cc_m=w_r+K_m$ is never empty. For $w\in\Cc_m$ write $\ell_w(k)=\frac12\bigl[\qq^{(m)}_\lambda(w+k)-\qq^{(m)}_\lambda(w)\bigr]=\frac12\qq^{(m)}_\lambda(k)$, a linear form on $K_m$ (Lemmas~\ref{lem:polar}, \ref{lem:trace0}), which depends on $\lambda_1$ through $\Tr_{q^m/2}(\lambda_1k)$.
+
+\begin{theorem}[structure of the Gauss sums]\label{thm:structure}
+\begin{enumerate}[label=\textup{(\roman*)},leftmargin=2em]
+\item For $w_r\in\Cc_m$,
+\[
+s_{2m}(\lambda)=q^m\,\eps(w_r)\,i^{\qq^{(m)}_\lambda(w_r)}\sum_{k\in K_m}(-1)^{(Q_{w_r}+\ell_{w_r})(k)} .
+\]
+Hence $s_{2m}(\lambda)=0$ if $Q_{w_r}+\ell_{w_r}$ is not identically zero on $\rad(\omega_\lambda|_{K_m})$, and otherwise $s_{2m}(\lambda)=\pm2^{(f_m+r_m)/2}q^m\,i^{\qq^{(m)}_\lambda(w_r)}$.
+\item For fixed $(\lambda_9,\lambda_5,\lambda_3)$ and $m$, the set of $\lambda_1\in\Fq$ with $s_{2m}(\lambda)\ne0$ is empty or an affine subspace of $\Fq$ \textup{(}as $\F_2$-space\textup{)}, of codimension at most $r_m$; and $\qq^{(m)}_\lambda(w_r)\bmod 2=mk+f_m$ for all of them.
+\item If $m=dt$ with $d=\gcd(m,n)$ then $\Cc_m=\Cc_d$ and $\qq^{(m)}_\lambda=t\,\qq^{(d)}_\lambda$ on $\Cc_d$; so $s_{2m}/q^m=\sum_{\Cc_d}\eps(w)\,i^{t\qq^{(d)}(w)}$ is determined by the data for $d\mid n$, and for even $t$ it equals $\pm\bigl(\#\{w\in\Cc_d:B_\lambda(w)=0\}-\#\{w\in\Cc_d:B_\lambda(w)\ne0\}\bigr)$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+(i) is Theorems~\ref{thm:cosetsum} and \ref{thm:torsor}(ii),(iii) with $\eps(w_r+k)=\eps(w_r)(-1)^{Q_{w_r}(k)}$, followed by the standard evaluation of the Gauss sum of a quadratic form on a space with radical: it vanishes unless the form vanishes on the radical, and then has absolute value $2^{(\dim+\dim\rad)/2}$. (ii) The restriction of $Q_{w_r}+\ell_{w_r}$ to $R=\rad(\omega_\lambda|_{K_m})$ is a linear form (its polar form vanishes on $R$), affine-linear in $\lambda_1$ through $\Tr_{q^m/2}(\lambda_1k)=\Tr_{q/2}(\lambda_1\Tr_{q^m/q}k)$; the condition that it vanish is a system of at most $r_m$ affine-linear equations on $\lambda_1$. The parity statement is Theorem~\ref{thm:traceparity}. (iii) The first claim holds because $F^n$ is trivial on $\Cc_\lambda\subset\F_{q^n}$; the second is the multiplicity lemma of Part~III ($\Tw_{F_{q^{dt}}}=t\,\Tw_{F_{q^d}}$ on $\F_{q^d}$, and the trace of $f_\lambda$ likewise); for even $t$, $i^{t\qq^{(d)}(w)}=(-1)^{\qq^{(d)}(w)}=(-1)^{\Tr(w)}$ is constant on $\Cc_d$ by Theorem~\ref{thm:traceparity}.
+\end{proof}
+
+What Theorem~\ref{thm:structure} leaves open is the sign $\pm$ in (i), the genus-$4$ analogue of the sign laws of Part~IV (Theorems~3.9, 3.17, 3.20 there). Table~\ref{tab:signs} records the data for all parameters with $q\le8$ (script \texttt{genus4\_sign\_rules.py}): for each Frobenius type and each $d\mid n$, the invariants $f_d,r_d$, the number of $\lambda_1$ with $s_{2d}\ne0$, and the set of values of $s_{2d}/q^d$.
+
+%%SIGNTABLE-BEGIN%%
+\begin{table}[p]
+\centering\scriptsize\renewcommand{\arraystretch}{0.88}
+\caption{Gauss sums $s_{2d}(\lambda)$ by Frobenius type, $d\mid n$, all parameters $(\lambda_5,\lambda_3)\in\F_q^2$ of the type and all $\lambda_1\in\F_q$ ($q=8$; a type absent at $q=8$ is shown at the largest $q\le8$ where it occurs). $f_d=\dim K_d$, $r_d=\dim\rad(\omega|_{K_d})$; ``$\#\lambda_1$'' is the number of $\lambda_1\in\F_q$ with $s_{2d}\ne0$ (with multiplicity over the parameters when it varies); $|s_{2d}|/q^d=2^{(f_d+r_d)/2}$ when nonzero; $W_d=\sum_{\lambda_1\in\F_q}s_{2d}/q^{d+1}$ with its multiplicity over the parameters of the type.}\label{tab:signs}
+\begin{tabular}{llrrrrlrl}
+\toprule
+type & $q$ & \#par. & $d$ & $f_d$ & $r_d$ & $\#\lambda_1$ & $|s_{2d}|/q^d$ & $W_d$\\
+\midrule
+7\,1 & 8 & 13 & 1 & 0 & 0 & 8 & 1 & $0$\\
+ &  &  & 7 & 6 & 0 & 8 & 8 & $0$\\
+8 & 8 & 6 & 1 & 1 & 1 & 4 & 2 & $0$\\
+ &  &  & 2 & 2 & 2 & 4 & 4 & $+2$($\times$3), $-2$($\times$3)\\
+ &  &  & 4 & 4 & 2 & 8 & 8 & $0$\\
+ &  &  & 8 & 6 & 0 & 8 & 8 & $-8$\\
+5\,2\,1 & 8 & 9 & 1 & 1 & 1 & 4 & 2 & $0$\\
+ &  &  & 2 & 2 & 0 & 8 & 2 & $0$\\
+ &  &  & 5 & 5 & 1 & 4 & 8 & $0$\\
+ &  &  & 10 & 6 & 0 & 8 & 8 & $0$\\
+4\,3\,1 & 8 & 6 & 1 & 1 & 1 & 4 & 2 & $0$\\
+ &  &  & 2 & 2 & 2 & 4 & 4 & $+2$($\times$3), $-2$($\times$3)\\
+ &  &  & 3 & 3 & 1 & 4 & 4 & $0$\\
+ &  &  & 4 & 4 & 0 & 8 & 4 & $+4$\\
+ &  &  & 6 & 4 & 2 & 4 & 8 & $+4$($\times$3), $-4$($\times$3)\\
+ &  &  & 12 & 6 & 0 & 8 & 8 & $-8$\\
+6\,1\,1 & 8 & 3 & 1 & 1 & 1 & 4 & 2 & $0$\\
+ &  &  & 2 & 2 & 0 & 8 & 2 & $0$\\
+ &  &  & 3 & 3 & 3 & 4 & 8 & $0$\\
+ &  &  & 6 & 6 & 0 & 8 & 8 & $0$\\
+5\,3 & 8 & 3 & 1 & 0 & 0 & 8 & 1 & $0$\\
+ &  &  & 3 & 2 & 0 & 8 & 2 & $0$\\
+ &  &  & 5 & 4 & 0 & 8 & 4 & $0$\\
+ &  &  & 15 & 6 & 0 & 8 & 8 & $0$\\
+5\,1\,1\,1 & 8 & 1 & 1 & 2 & 0 & 8 & 2 & $0$\\
+ &  &  & 5 & 6 & 0 & 8 & 8 & $0$\\
+4\,2\,1\,1 & 8 & 3 & 1 & 2 & 2 & 2 & 4 & $0$\\
+ &  &  & 2 & 4 & 2 & 4 & 8 & $0$\\
+ &  &  & 4 & 6 & 0 & 8 & 8 & $-8$\\
+6\,2 & 8 & 3 & 1 & 2 & 0 & 8 & 2 & $0$\\
+ &  &  & 2 & 2 & 0 & 8 & 2 & $+2$\\
+ &  &  & 3 & 4 & 2 & 8 & 8 & $0$\\
+ &  &  & 6 & 6 & 0 & 8 & 8 & $+8$\\
+4\,4 & 8 & 1 & 1 & 2 & 2 & 2 & 4 & $0$\\
+ &  &  & 2 & 4 & 2 & 8 & 8 & $-4$\\
+ &  &  & 4 & 6 & 0 & 8 & 8 & $-8$\\
+non-octad (3) & 8 & 1 & 1 & 0 & 0 & 8 & 1 & $0$\\
+ &  &  & 3 & 6 & 0 & 8 & 8 & $0$\\
+non-octad (9) & 8 & 9 & 1 & 0 & 0 & 8 & 1 & $0$\\
+ &  &  & 3 & 0 & 0 & 8 & 1 & $0$\\
+ &  &  & 9 & 6 & 0 & 8 & 8 & $0$\\
+non-octad (12) & 8 & 6 & 1 & 0 & 0 & 8 & 1 & $0$\\
+ &  &  & 2 & 0 & 0 & 8 & 1 & $-1$\\
+ &  &  & 3 & 2 & 2 & 8 & 4 & $0$\\
+ &  &  & 4 & 0 & 0 & 8 & 1 & $+1$\\
+ &  &  & 6 & 4 & 2 & 8 & 8 & $+8$\\
+ &  &  & 12 & 6 & 0 & 8 & 8 & $-8$\\
+non-octad (6) & 4 & 1 & 1 & 0 & 0 & 4 & 1 & $0$\\
+ &  &  & 2 & 0 & 0 & 4 & 1 & $+1$\\
+ &  &  & 3 & 4 & 2 & 4 & 8 & $0$\\
+ &  &  & 6 & 6 & 0 & 4 & 8 & $-8$\\
+\bottomrule
+\end{tabular}
+\end{table}
+%%SIGNTABLE-END%%
+
 \section{Questions}\label{sec:q}
 
 \begin{enumerate}[leftmargin=2em]
-\item The signs of $s_{2m}(\lambda)$ when $\Cc_\lambda\cap\F_{q^m}$ is a proper affine subspace: by Theorems~\ref{thm:cosetsum} and \ref{thm:torsor}, $s_{2m}/q^m$ is the Gauss sum of $Q_{w_0}+\ell$ restricted to a subspace, hence $0$ or $\pm2^j i^p$; the sign requires the value of $\Tr$ on $\Cc_\lambda$ (the genus-$4$ trace parity) and the analogue of the hyperplane parameter $\kappa_0$ of Part~IV, type by type for the $24$ types.
+\item The sign in Theorem~\ref{thm:structure}(i) as a function of $\lambda$, type by type: Table~\ref{tab:signs} shows which types have a constant sign and which split; for the latter the analogue of the hyperplane parameter $\kappa_0$ and of the closed form $(-1)^{\Tr(\rho_0/\tau_0^2)}$ of Part~IV is to be found, presumably in the ground-field data of the factorisation of $B_\lambda$ over $\Fq$.
 \item The counts of the Frobenius types as functions of $q$, and the geometric monodromy of $\lambda\mapsto\Kk_\lambda$.
 \item Which Legendre-interval problem the family \eqref{eq:curve} governs (degree $10$ if the pattern of Parts~I--III persists; the degree-$8$ problem involves $x^7$, which has $2$-weight $3$, no quadratic form, and curves $y^2+y=x^7+\dots$ that are not supersingular: their Newton polygons over $\F_2$ have slopes $1/3,2/3$).
 \end{enumerate}

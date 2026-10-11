@@ -1,0 +1,161 @@
+﻿======================================================================================================================
+q = 2: s_{2d}/q^d on the Frobenius types, d | n, all lambda_1 in F_q
+======================================================================================================================
+  check vs brute force: (l5,l3)=(0,0), m=9: s_{2m}/2^m = ['+8i', '-8i'] (octad_sum_test: -8i,+8i / +8i,-8i)
+  check vs brute force: (l5,l3)=(1,1), m=7: s_{2m}/2^m = ['-8i', '+8i'] (octad_sum_test: -8i,+8i / +8i,-8i)
+  structure |s_{2d}| in {0, 2^((f+r)/2) q^d} and #{l1: s != 0} a power of 2: True
+
+  type 5 3:
+     d= 1  f=0 r=0  #l1 with s!=0: 2/2  values of s_{2d}/q^d: {+1i, -1i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+     d= 3  f=2 r=0  #l1 with s!=0: 2/2  values of s_{2d}/q^d: {+2i, -2i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+     d= 5  f=4 r=0  #l1 with s!=0: 2/2  values of s_{2d}/q^d: {+4i, -4i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+     d=15  f=6 r=0  #l1 with s!=0: 2/2  values of s_{2d}/q^d: {+8i, -8i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+
+  type 7 1:
+     d= 1  f=0 r=0  #l1 with s!=0: 2/2  values of s_{2d}/q^d: {+1i, -1i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+     d= 7  f=6 r=0  #l1 with s!=0: 2/2  values of s_{2d}/q^d: {+8i, -8i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+
+  type non-octad(12):
+     d= 1  f=0 r=0  #l1 with s!=0: 2/2  values of s_{2d}/q^d: {+1i, -1i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+     d= 2  f=0 r=0  #l1 with s!=0: 2/2  values of s_{2d}/q^d: {-1}  W_d = sum_l1 s_{2d}/q^(d+1) = -1  x1 parameters
+     d= 3  f=2 r=2  #l1 with s!=0: 2/2  values of s_{2d}/q^d: {+4i, -4i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+     d= 4  f=0 r=0  #l1 with s!=0: 2/2  values of s_{2d}/q^d: {+1}  W_d = sum_l1 s_{2d}/q^(d+1) = +1  x1 parameters
+     d= 6  f=4 r=2  #l1 with s!=0: 2/2  values of s_{2d}/q^d: {+8}  W_d = sum_l1 s_{2d}/q^(d+1) = +8  x1 parameters
+     d=12  f=6 r=0  #l1 with s!=0: 2/2  values of s_{2d}/q^d: {-8}  W_d = sum_l1 s_{2d}/q^(d+1) = -8  x1 parameters
+
+  type non-octad(9):
+     d= 1  f=0 r=0  #l1 with s!=0: 2/2  values of s_{2d}/q^d: {+1i, -1i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+     d= 3  f=0 r=0  #l1 with s!=0: 2/2  values of s_{2d}/q^d: {+1i, -1i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+     d= 9  f=6 r=0  #l1 with s!=0: 2/2  values of s_{2d}/q^d: {+8i, -8i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+======================================================================================================================
+q = 4: s_{2d}/q^d on the Frobenius types, d | n, all lambda_1 in F_q
+======================================================================================================================
+  structure |s_{2d}| in {0, 2^((f+r)/2) q^d} and #{l1: s != 0} a power of 2: True
+
+  type 5 2 1:
+     d= 1  f=1 r=1  #l1 with s!=0: 2/4  values of s_{2d}/q^d: {+2i, -2i, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x2 parameters
+     d= 2  f=2 r=0  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {+2, -2}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x2 parameters
+     d= 5  f=5 r=1  #l1 with s!=0: 2/4  values of s_{2d}/q^d: {+8i, -8i, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x2 parameters
+     d=10  f=6 r=0  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {+8, -8}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x2 parameters
+
+  type 5 3:
+     d= 1  f=0 r=0  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {+1, -1}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+     d= 3  f=2 r=0  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {+2, -2}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+     d= 5  f=4 r=0  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {+4, -4}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+     d=15  f=6 r=0  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {+8, -8}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+
+  type 6 1 1:
+     d= 1  f=1 r=1  #l1 with s!=0: 2/4  values of s_{2d}/q^d: {+2i, -2i, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x2 parameters
+     d= 2  f=2 r=0  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {+2, -2}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x2 parameters
+     d= 3  f=3 r=3  #l1 with s!=0: 2/4  values of s_{2d}/q^d: {+8i, -8i, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x2 parameters
+     d= 6  f=6 r=0  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {+8, -8}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x2 parameters
+
+  type 7 1:
+     d= 1  f=0 r=0  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {+1, -1}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x3 parameters
+     d= 7  f=6 r=0  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {+8, -8}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x3 parameters
+
+  type 8:
+     d= 1  f=1 r=1  #l1 with s!=0: 2/4  values of s_{2d}/q^d: {+2i, -2i, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x4 parameters
+     d= 2  f=2 r=2  #l1 with s!=0: 2/4  values of s_{2d}/q^d: {+4, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = +2  x2 parameters
+     d= 2  f=2 r=2  #l1 with s!=0: 2/4  values of s_{2d}/q^d: {-4, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = -2  x2 parameters
+     d= 4  f=4 r=2  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {+8, -8}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x4 parameters
+     d= 8  f=6 r=0  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {-8}  W_d = sum_l1 s_{2d}/q^(d+1) = -8  x4 parameters
+
+  type non-octad(12):
+     d= 1  f=0 r=0  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {+1, -1}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x2 parameters
+     d= 2  f=0 r=0  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {+1}  W_d = sum_l1 s_{2d}/q^(d+1) = +1  x2 parameters
+     d= 3  f=2 r=2  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {+4, -4}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x2 parameters
+     d= 4  f=0 r=0  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {+1}  W_d = sum_l1 s_{2d}/q^(d+1) = +1  x2 parameters
+     d= 6  f=4 r=2  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {-8}  W_d = sum_l1 s_{2d}/q^(d+1) = -8  x2 parameters
+     d=12  f=6 r=0  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {-8}  W_d = sum_l1 s_{2d}/q^(d+1) = -8  x2 parameters
+
+  type non-octad(6):
+     d= 1  f=0 r=0  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {+1, -1}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+     d= 2  f=0 r=0  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {+1}  W_d = sum_l1 s_{2d}/q^(d+1) = +1  x1 parameters
+     d= 3  f=4 r=2  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {+8, -8}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+     d= 6  f=6 r=0  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {-8}  W_d = sum_l1 s_{2d}/q^(d+1) = -8  x1 parameters
+
+  type non-octad(9):
+     d= 1  f=0 r=0  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {+1, -1}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+     d= 3  f=0 r=0  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {+1, -1}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+     d= 9  f=6 r=0  #l1 with s!=0: 4/4  values of s_{2d}/q^d: {+8, -8}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+======================================================================================================================
+q = 8: s_{2d}/q^d on the Frobenius types, d | n, all lambda_1 in F_q
+======================================================================================================================
+  structure |s_{2d}| in {0, 2^((f+r)/2) q^d} and #{l1: s != 0} a power of 2: True
+
+  type 4 2 1 1:
+     d= 1  f=2 r=2  #l1 with s!=0: 2/8  values of s_{2d}/q^d: {+4i, -4i, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x3 parameters
+     d= 2  f=4 r=2  #l1 with s!=0: 4/8  values of s_{2d}/q^d: {+8, -8, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x3 parameters
+     d= 4  f=6 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {-8}  W_d = sum_l1 s_{2d}/q^(d+1) = -8  x3 parameters
+
+  type 4 3 1:
+     d= 1  f=1 r=1  #l1 with s!=0: 4/8  values of s_{2d}/q^d: {+2, -2, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x6 parameters
+     d= 2  f=2 r=2  #l1 with s!=0: 4/8  values of s_{2d}/q^d: {+4, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = +2  x3 parameters
+     d= 2  f=2 r=2  #l1 with s!=0: 4/8  values of s_{2d}/q^d: {-4, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = -2  x3 parameters
+     d= 3  f=3 r=1  #l1 with s!=0: 4/8  values of s_{2d}/q^d: {+4, -4, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x6 parameters
+     d= 4  f=4 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+4}  W_d = sum_l1 s_{2d}/q^(d+1) = +4  x6 parameters
+     d= 6  f=4 r=2  #l1 with s!=0: 4/8  values of s_{2d}/q^d: {+8, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = +4  x3 parameters
+     d= 6  f=4 r=2  #l1 with s!=0: 4/8  values of s_{2d}/q^d: {-8, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = -4  x3 parameters
+     d=12  f=6 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {-8}  W_d = sum_l1 s_{2d}/q^(d+1) = -8  x6 parameters
+
+  type 4 4:
+     d= 1  f=2 r=2  #l1 with s!=0: 2/8  values of s_{2d}/q^d: {+4i, -4i, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+     d= 2  f=4 r=2  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+8, -8}  W_d = sum_l1 s_{2d}/q^(d+1) = -4  x1 parameters
+     d= 4  f=6 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {-8}  W_d = sum_l1 s_{2d}/q^(d+1) = -8  x1 parameters
+
+  type 5 1 1 1:
+     d= 1  f=2 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+2i, -2i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+     d= 5  f=6 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+8i, -8i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+
+  type 5 2 1:
+     d= 1  f=1 r=1  #l1 with s!=0: 4/8  values of s_{2d}/q^d: {+2, -2, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x9 parameters
+     d= 2  f=2 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+2, -2}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x9 parameters
+     d= 5  f=5 r=1  #l1 with s!=0: 4/8  values of s_{2d}/q^d: {+8, -8, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x9 parameters
+     d=10  f=6 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+8, -8}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x9 parameters
+
+  type 5 3:
+     d= 1  f=0 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+1i, -1i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x3 parameters
+     d= 3  f=2 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+2i, -2i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x3 parameters
+     d= 5  f=4 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+4i, -4i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x3 parameters
+     d=15  f=6 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+8i, -8i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x3 parameters
+
+  type 6 1 1:
+     d= 1  f=1 r=1  #l1 with s!=0: 4/8  values of s_{2d}/q^d: {+2, -2, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x3 parameters
+     d= 2  f=2 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+2, -2}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x3 parameters
+     d= 3  f=3 r=3  #l1 with s!=0: 4/8  values of s_{2d}/q^d: {+8, -8, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x3 parameters
+     d= 6  f=6 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+8, -8}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x3 parameters
+
+  type 6 2:
+     d= 1  f=2 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+2i, -2i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x3 parameters
+     d= 2  f=2 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+2}  W_d = sum_l1 s_{2d}/q^(d+1) = +2  x3 parameters
+     d= 3  f=4 r=2  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+8i, -8i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x3 parameters
+     d= 6  f=6 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+8}  W_d = sum_l1 s_{2d}/q^(d+1) = +8  x3 parameters
+
+  type 7 1:
+     d= 1  f=0 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+1i, -1i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x13 parameters
+     d= 7  f=6 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+8i, -8i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x13 parameters
+
+  type 8:
+     d= 1  f=1 r=1  #l1 with s!=0: 4/8  values of s_{2d}/q^d: {+2, -2, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x6 parameters
+     d= 2  f=2 r=2  #l1 with s!=0: 4/8  values of s_{2d}/q^d: {+4, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = +2  x3 parameters
+     d= 2  f=2 r=2  #l1 with s!=0: 4/8  values of s_{2d}/q^d: {-4, 0}  W_d = sum_l1 s_{2d}/q^(d+1) = -2  x3 parameters
+     d= 4  f=4 r=2  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+8, -8}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x6 parameters
+     d= 8  f=6 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {-8}  W_d = sum_l1 s_{2d}/q^(d+1) = -8  x6 parameters
+
+  type non-octad(12):
+     d= 1  f=0 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+1i, -1i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x6 parameters
+     d= 2  f=0 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {-1}  W_d = sum_l1 s_{2d}/q^(d+1) = -1  x6 parameters
+     d= 3  f=2 r=2  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+4i, -4i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x6 parameters
+     d= 4  f=0 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+1}  W_d = sum_l1 s_{2d}/q^(d+1) = +1  x6 parameters
+     d= 6  f=4 r=2  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+8}  W_d = sum_l1 s_{2d}/q^(d+1) = +8  x6 parameters
+     d=12  f=6 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {-8}  W_d = sum_l1 s_{2d}/q^(d+1) = -8  x6 parameters
+
+  type non-octad(3):
+     d= 1  f=0 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+1i, -1i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+     d= 3  f=6 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+8i, -8i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x1 parameters
+
+  type non-octad(9):
+     d= 1  f=0 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+1i, -1i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x9 parameters
+     d= 3  f=0 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+1i, -1i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x9 parameters
+     d= 9  f=6 r=0  #l1 with s!=0: 8/8  values of s_{2d}/q^d: {+8i, -8i}  W_d = sum_l1 s_{2d}/q^(d+1) = 0  x9 parameters
