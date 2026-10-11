@@ -40,7 +40,8 @@ def main():
                 W = ", ".join(f"{tex_val(k)}" + (f"($\\times${v})" if len(a['W']) > 1 else "") for k, v in sorted(a["W"].items()))
                 name = cls.replace(" ", "\\,") if first else ""
                 if first and cls.startswith("non"):
-                    name = "non-octad " + cls[cls.index("("):]
+                    name = {"non-octad(9)": "$\\Phi_9$", "non-octad(12)": "$\\Phi_3^3$ (cyclic)", "non-octad(6)": "$\\Phi_3,\\Phi_3^2$",
+                            "non-octad(3)": "$\\Phi_3,\\Phi_3,\\Phi_3$"}.get(cls, "non-octad " + cls[cls.index("("):])
                 rows.append(f"{name} & {q if first else ''} & {a['n'] if first else ''} & {d} & {a['f']} & {a['r']} & {nz} & {mag} & {W}\\\\")
                 first = False
     table = r"""\begin{table}[p]
