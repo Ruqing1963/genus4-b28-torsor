@@ -1,0 +1,79 @@
+﻿====================================================================================================
+Part A: the genus-3 family y^2 + y = x^7 + l5 x^5 + l3 x^3 + l1 x over F_2
+====================================================================================================
+l5 l3 l1   N1 N2 N3     L(T) = 1 + a1 T + ... + 8 T^6                NP slopes              p-rank supersingular  N4..N6 check
+0 0 0      [3, 5, 3]    1 - 2T^3 + 8T^6                              ['1/3', '1/3', '1/3', '2/3', '2/3', '2/3'] 0      False        True
+0 0 1      [5, 9, 11]   1 + 2T^1 + 4T^2 + 6T^3 + 8T^4 + 8T^5 + 8T^6  ['1/3', '1/3', '1/3', '2/3', '2/3', '2/3'] 0      False        True
+0 1 0      [5, 5, 11]   1 + 2T^1 + 2T^2 + 2T^3 + 4T^4 + 8T^5 + 8T^6  ['1/3', '1/3', '1/3', '2/3', '2/3', '2/3'] 0      False        True
+0 1 1      [3, 9, 15]   1 + 2T^2 + 2T^3 + 4T^4 + 8T^6                ['1/3', '1/3', '1/3', '2/3', '2/3', '2/3'] 0      False        True
+1 0 0      [5, 9, 11]   1 + 2T^1 + 4T^2 + 6T^3 + 8T^4 + 8T^5 + 8T^6  ['1/3', '1/3', '1/3', '2/3', '2/3', '2/3'] 0      False        True
+1 0 1      [3, 5, 15]   1 + 2T^3 + 8T^6                              ['1/3', '1/3', '1/3', '2/3', '2/3', '2/3'] 0      False        True
+1 1 0      [3, 9, 3]    1 + 2T^2 - 2T^3 + 4T^4 + 8T^6                ['1/3', '1/3', '1/3', '2/3', '2/3', '2/3'] 0      False        True
+1 1 1      [5, 5, 11]   1 + 2T^1 + 2T^2 + 2T^3 + 4T^4 + 8T^5 + 8T^6  ['1/3', '1/3', '1/3', '2/3', '2/3', '2/3'] 0      False        True
+A supersingular curve needs all slopes 1/2; y^2 + y = x^7 (and every member of the family with coefficients in F_2)
+has p-rank 0 but is NOT supersingular: the Newton polygon has slopes 1/3, 2/3.
+
+Is 2 Tr(l7 x^7) a Z/4-quadratic form?  The polar form P(x,y) = Tr(f(x+y) + f(x) + f(y)) must be additive in x.
+  f = x^7 over F_16: additivity failures of the polar form: 1344 of 4096  -> NOT a quadratic form (2-weight of the exponent is 3)
+  f = x^9 over F_16: additivity failures of the polar form: 0 of 4096  -> quadratic form
+  f = x^5 over F_16: additivity failures of the polar form: 0 of 4096  -> quadratic form
+  f = x^3 over F_16: additivity failures of the polar form: 0 of 4096  -> quadratic form
+
+====================================================================================================
+Part B: the genus-4 family y^2 + y = x^9 + l5 x^5 + l3 x^3 + l1 x and the octad obstruction
+====================================================================================================
+characteristic polynomial of each S_8 class on the 6-dimensional octad space V = F_2^8_even / <1>:
+   8                z^6+z^4+z^2+1
+   7 1              z^6+z^5+z^4+z^3+z^2+z+1
+   6 2              z^6+1
+   6 1 1            z^6+1
+   5 3              z^6+z^4+z^3+z^2+1
+   5 2 1            z^6+z^5+z+1
+   5 1 1 1          z^6+z^5+z+1
+   4 4              z^6+z^4+z^2+1
+   4 3 1            z^6+z^5+z^4+z^2+z+1
+   4 2 2            z^6+z^4+z^2+1
+   4 2 1 1          z^6+z^4+z^2+1
+   4 1 1 1 1        z^6+z^4+z^2+1
+   3 3 2            z^6+1
+   3 3 1 1          z^6+1
+   3 2 2 1          z^6+z^5+z^4+z^2+z+1
+   3 2 1 1 1        z^6+z^5+z^4+z^2+z+1
+   3 1 1 1 1 1      z^6+z^5+z^4+z^2+z+1
+   2 2 2 2          z^6+z^4+z^2+1
+   2 2 2 1 1        z^6+z^4+z^2+1
+   2 2 1 1 1 1      z^6+z^4+z^2+1
+   2 1 1 1 1 1 1    z^6+z^4+z^2+1
+   1 1 1 1 1 1 1 1  z^6+z^4+z^2+1
+(22 classes of S_8, 20 distinct module types)
+
+Frobenius on K = ker T' for l9 = 1, (l5, l3) in F_2^2: ell(z) = z^6 + l5 z^5 + l3 z^4 + z^3 + l3 z^2 + l5 z + 1
+
+  (l5,l3) = (0,0):  ell = z^6+z^3+1 = (z^6+z^3+1),  K is defined over F_2^9, Frobenius x->x^2 has order 9 on K
+    k mod 9 for which Frob^k (= Frobenius of F_{2^k}) is the action of an S_8 class: [(9, '1 1 1 1 1 1 1 1')]
+    k mod 9 with NO Frobenius-stable octad possible (module not realised in S_8): [1, 2, 3, 4, 5, 6, 7, 8]
+
+  (l5,l3) = (0,1):  ell = z^6+z^4+z^3+z^2+1 = (z^2+z+1) * (z^4+z^3+z^2+z+1),  K is defined over F_2^15, Frobenius x->x^2 has order 15 on K
+    k mod 15 for which Frob^k (= Frobenius of F_{2^k}) is the action of an S_8 class: [(1, '5 3'), (2, '5 3'), (3, '5 1 1 1'), (4, '5 3'), (5, '3 1 1 1 1 1'), (6, '5 1 1 1'), (7, '5 3'), (8, '5 3'), (9, '5 1 1 1'), (10, '3 1 1 1 1 1'), (11, '5 3'), (12, '5 1 1 1'), (13, '5 3'), (14, '5 3'), (15, '1 1 1 1 1 1 1 1')]
+    k mod 15 with NO Frobenius-stable octad possible (module not realised in S_8): []
+
+  (l5,l3) = (1,0):  ell = z^6+z^5+z^3+z+1 = (z^2+z+1) * (z^2+z+1) * (z^2+z+1),  K is defined over F_2^12, Frobenius x->x^2 has order 12 on K
+    k mod 12 for which Frob^k (= Frobenius of F_{2^k}) is the action of an S_8 class: [(3, '4 4'), (6, '2 2 2 2/2 2 1 1 1 1'), (9, '4 4'), (12, '1 1 1 1 1 1 1 1')]
+    k mod 12 with NO Frobenius-stable octad possible (module not realised in S_8): [1, 2, 4, 5, 7, 8, 10, 11]
+
+  (l5,l3) = (1,1):  ell = z^6+z^5+z^4+z^3+z^2+z+1 = (z^3+z+1) * (z^3+z^2+1),  K is defined over F_2^7, Frobenius x->x^2 has order 7 on K
+    k mod 7 for which Frob^k (= Frobenius of F_{2^k}) is the action of an S_8 class: [(1, '7 1'), (2, '7 1'), (3, '7 1'), (4, '7 1'), (5, '7 1'), (6, '7 1'), (7, '1 1 1 1 1 1 1 1')]
+    k mod 7 with NO Frobenius-stable octad possible (module not realised in S_8): []
+
+Explicit octad for (l5,l3) = (1,1): T'(x)^8 = Tr_{128/2}(x), K = trace-zero hyperplane of F_128.
+  alpha = 0b0001001 (polynomial basis mod x^7+x+1), Tr(alpha) = 1, conjugates independent
+  octad = seven conjugates of alpha and 1; sum = 0: True;  all eight in the coset T'^{-1}(1): True
+  duads: 28, tetrads: 35, disjoint: True, duads u tetrads = K \ 0: True
+  coset = 8 roots + 56 triads: True (56 triads)
+  m_alpha(u) = z^7+z^6+1, B_8(u) = (u+1) m_alpha(u) = z^8+z^6+z+1;  coefficient of u^7 is 0: True
+  Frobenius permutes the octad as a 7-cycle fixing 1: class 7 1 of S_8, as predicted by the module table.
+
+Brute force for (l5,l3) = (0,0), i.e. y^2 + y = x^9 + l1 x:  K = {x in F_512 : x^64 + x^8 + x = 0}
+  |K| = 64;  Frobenius orbit lengths on K \ 0: {9: 63};  order of Frobenius on K = 9 (not an element order of S_8: S_8 has no 9-cycle)
+  Hence over F_{2^k} with 3 does not divide k the curve y^2 + y = x^9 + l1 x admits no Frobenius-stable octad;
+  the module table above says the same for 3 | k, 9 does not divide k, and allows the trivial class 1^8 for 9 | k.
