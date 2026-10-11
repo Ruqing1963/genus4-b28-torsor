@@ -96,18 +96,52 @@ Frobenius Fq-Frob = (x ↦ x^q) acts F2-linearly on K. If a Frobenius-stable oct
 * **Non-octad parameters** are exactly the four GL-types (z⁶+z³+1) [order 9, 1/9 of all], (z²+z+1)³ [order 12 or 3, 1/12], (z²+z+1)(z²+z+1)² [1/72] and (z²+z+1)³ semisimple [order 3, 1/648]: all have characteristic polynomial a power of Φ3 or Φ9, i.e. Frobenius acts through the field F4 or F64 structure of K. Total predicted 0.2099, observed 0.210 at q = 512.
 * **Unlike Table 2 of Part III, the counts are not quadratic polynomials in q on a fixed parity of k.** Interpolation through the three largest q of either parity fails on the remaining points for every type; the deviations from the main term |C| q²/|G| are of size O(q) (q = 512: 7 1 gives 37885 against 37449.1; 8 gives 32244 against 32768; order 9 gives 29061 against 29127.1). The lower-order terms presumably depend on k modulo the orders 3, 7, 9, 15 that occur, or are genuine Frobenius traces of a non-constant local system; nine values of q cannot decide this. This is a second genuine difference from genus 2, where the eleven counts are exact polynomials.
 
-## 5. Programme
+## 5. The canonical structure of the coset: signs, the quadratic-form torsor, and B28 (computed)
 
-1. **Derive T' for genus 4** from the Witt-vector trace, as in Part III, and confirm numerically that ker T' has dimension 6 and that T'^{-1}(1) has 64 points for every λ with λ9 ≠ 0 (small q).
-2. **Frobenius class on K for all λ ∈ Fq³, q = 2, 4, 8, 16, 32.** No field extensions are needed: for 2-linearised polynomials over Fq, ker L ⊆ ker M iff L right-divides M in the twisted polynomial ring Fq{τ}, so the dimension of ker g(Frob_q) ∩ K equals the τ-degree of the right gcd of T'^8 and g(τ^k) for g ∈ F2[z]. This gives the module invariant of Frobenius on K, hence (i) whether λ is an octad parameter, (ii) the S8 class when it is, (iii) the conjugacy class in GL6(F2) (or Sp6(F2)) when it is not, and the counts of each class as functions of q, which is the genus-4 analogue of Table 2 of Part III.
-3. **Intrinsic symplectic form.** Decide whether K carries a canonical nondegenerate alternating form preserved by Frobenius (candidates: the polar form of the Witt form restricted suitably, or the Weil-type pairing on the Dieudonné module of the supersingular Jacobian), and whether the octad quadratic form Q is intrinsic (Q(duad) = 1, Q(tetrad) = 0 looks like a half-Witt value, compare the sixteen-point lemma of Part IV).
-4. **Octad formula.** For octad parameters, test numerically s_{2m}(λ) = q^m Σ_{w ∈ T'^{-1}(1) ∩ F_{q^m}} ε(w) i^{𝔮^{(m)}(w)} with ε(root) = +1 and ε(triad) ∈ {±1} to be determined; the first feasible case is q = 2, m = 7 for λ = (1, 1, 1) (sum over F_{2^{14}}, all 64 coset points rational). For non-octad parameters test the coset form of the hexad formula directly (Part IV, `part4_relative_reduction.py`), which never used the roots.
-5. **Trace parity and sign rules.** The trace-parity theorem of Part IV (Tr(w) ≡ mk + dim(K ∩ F_{q^m}) mod 2) was proved from the shift identity and complex conjugation alone and should hold verbatim for genus 4; the sixteen-point lemma becomes a sixty-four-point lemma on 8 + 56 points with S8 (octad case) or Sp6(F2) (general case) symmetry.
-6. Only after 1–5: which Legendre-interval degree the family x⁹ governs (if the pattern of Parts I–III persists it is d = 10, and d = 8 is governed by the non-quadratic x⁷ sums of Section 2.3), and whether a closed form of the type X = q⁶ + q⁵ exists there.
+This section supersedes the octad as the organising structure. Scripts: `octad_sum_test.py`, `find_octic_identity.py`, `coset_signs.py`, `b28_identity.py`; outputs with the same names.
 
-## 6. Open questions recorded
+**5.1 The polar operator is right (Programme step 1 done).** For 𝔮(x) = T(x) + 2Tr(λ9x⁹ + λ5x⁵ + λ3x³ + λ1x), T the Witt trace of [x] as in Parts III–IV, the identity 𝔮(x+y) = 𝔮(x) + 𝔮(y) + 2Tr(y T'(x)) with T'(x) = λ9x⁸ + λ5x⁴ + λ3x² + x + (λ3x)^{1/2} + (λ5x)^{1/4} + (λ9x)^{1/8} holds for all x, y ∈ F16 and all λ ∈ F16³ (983040 evaluations) and for all x, y ∈ F64, λ ∈ F8³ (1835008 evaluations), with no exception; the variant with an extra 2Tr(x)Tr(y) fails in a quarter of the cases. So K = ker T' (dimension 6) is the radical of the polar form and the coset C = T'^{-1}(1) is the right object.
 
-* Q1. Is the Frobenius on K = ker T' (genus 4) always symplectic for an intrinsic form, so that its class lives in Sp6(F2) (30 classes) rather than GL6(F2)?
-* Q2. Are all 30 classes of Sp6(F2) realised as λ varies over F̄q, with counts polynomial in q (Chebotarev for the monodromy of the family)?
-* Q3. For octad parameters, what is the sign ε at the 56 triads in the octad formula, and does B8 have a closed form in λ analogous to B = λ5²u⁶ + λ3²u² + λ5u + 1?
-* Q4. For non-octad parameters, what replaces the sixteen-point lemma? Verified: every element of Sp6(F2) preserves at least one of the 64 quadratic forms with polar form ⟨,⟩, and the 469700 elements that preserve no plus-type form all preserve a minus-type form, i.e. lie in a conjugate of O6−(2) (order 51840, the Weyl group of E6). So a non-octad Frobenius still has an orthogonal structure, that of a minus-type form with 27 singular points (the 27 lines on a cubic surface), and the natural guess is that the sixteen-point lemma is replaced by a lemma on the ⟨Frobenius⟩-orbits of the 64-point coset organised by that form.
+**5.2 The sign ε(w) exists and is computable from one lift.** As in Part IV, for c ∈ F_{q^{2m}} with w = c + c^{q^m}, the sum of i^{𝔮^{(2m)}} over c + F_{q^m} vanishes unless w ∈ C, and then equals q^m i^{𝔮^{(2m)}(c)}; hence ε(w) := i^{𝔮^{(2m)}(c) − 𝔮^{(m)}(w)} is ±1, depends only on w (not on c, not on λ1), and
+
+s_{2m}(λ) = q^m Σ_{w ∈ C ∩ F_{q^m}} ε(w) i^{𝔮^{(m)}(w)}.
+
+Verified by brute force over F_{2^{14}} (λ = (1,1,1), m = 7) and F_{2^{18}} (λ = (1,0,0), m = 9), both λ1: fibres outside C vanish, the formula holds, and s14 = ∓1024 i, s18 = ±4096 i.
+
+**5.3 The signs are 28 : 36, not 8 : 56.** In every case computed (all λ ∈ Fq² for q = 2, 4, 8, i.e. 84 parameters; 12 random λ at q = 16 and 8 at q = 32), ε = +1 on exactly 28 points of C and −1 on 36, and the partition is Frobenius-stable. The roots of a Frobenius-stable octad are *not* the +1 set (for λ = (1,1,1) over F2 each of the seven octads has 7 or 0 of its roots in the +1 set). The numbers 28 = 2⁵ − 2² and 36 = 2⁵ + 2² are the numbers of minus-type and plus-type quadratic forms on F2⁶ with a fixed polar form, exactly as 6 roots and 10 totals in genus 2 are the numbers of minus- and plus-type forms on F2⁴.
+
+**5.4 The coset is a torsor of quadratic forms (verified for every parameter above).** For P ∈ C define Q_P(k) = [ε(P + k) ≠ ε(P)] on K. Then, in all cases: Q_P is a quadratic form; its polar form ω(a, b) = Q_P(a+b) + Q_P(a) + Q_P(b) is alternating, nondegenerate and **independent of P**, so K carries a canonical symplectic form and Frobenius is symplectic (Q1 answered affirmatively); Arf(Q_P) = 1 (minus type, 28 zeros) iff ε(P) = +1; and ω has the intrinsic expression ω(a, b) = Tr_{q^{2m}/2}(d_b T'(d_a)) for lifts d_a + d_a^{q^m} = a, d_b + d_b^{q^m} = b, which is well defined precisely because the relative trace of T'(d_a) is T'(a) = 0. Equivalently, Q_w(k) = ½[𝔮(d_k) − 𝔮^{(m)}(k)] + Tr(d_k T'(c_w)) + Tr_{q^m/2}(k) mod 2. In words: the Witt form 𝔮 restricted to the preimage of K under the relative trace has F_{q^m} in the radical of its polar form but not of itself; it descends to K only up to a linear form, i.e. as a torsor of quadratic forms, and C is that torsor. The same holds in genus 2 (checked for all λ with λ5 ≠ 0, q = 2, 4, 8): the hexad roots are the 6 minus-type points. This gives the sixty-four-point lemma for free: Σ_{w∈C} ε(w)(−1)^{φ(w)} = ±2³ for any affine φ (Σ_Q (−1)^{Arf Q + ℓ(Q)} = ±8), matching s14/2⁷ = ±8i.
+
+**5.5 The canonical polynomial of degree 28.** Interpolating the coefficients of F₊(x) = ∏_{ε(w)=+1}(x − w) as reduced polynomials in (λ5, λ3) over F2, F4, F8 gives the same answer in all three fields, confirmed on the random parameters at q = 16, 32 (F₊ computed from ε, compared coefficient by coefficient):
+
+B28(x) = x²⁸ + λ5⁴ x¹² + x¹⁰ + λ3⁴ x⁴ + λ5² x² + x + 1   (λ9 = 1),
+
+and exact division in F2[λ5, λ3][x] gives
+
+L'(x) + 1 = B28(x) · (x⁸ B28(x) + 1),   i.e.   **L'(x) = x⁸ B28(x)² + B28(x) + 1,**
+
+the precise analogue of L' = x⁴ B² + B + 1 of Part III (genus 2, where the method recovers B = u⁶ + λ3²u² + u + 1 for λ5 = 1 and B/λ5² in general). So B28 is characterised algebraically: Y = x⁸ B28 is the polynomial solution of the Artin–Schreier equation Y² + Y = x⁸(L' + 1), unique up to Y ↦ Y + 1, and the 36 plus-type points are the roots of x⁸ B28 + 1 (the "totals" polynomial, x⁴B + 1 in genus 2). Numerical status: ε = +1 ⟺ B28(w) = 0 holds for every parameter at q ≤ 8 and every sampled parameter at q = 16, 32; the identity L' = x⁸B28² + B28 + 1 is exact. The theorem to prove is the genus-4 hexad formula
+
+s_{2m}(λ) = q^m Σ_{w ∈ C ∩ F_{q^m}} (−1)^{[B28(w) ≠ 0]} i^{𝔮^{(m)}(w)},
+
+presumably by the Part IV argument with γ_w² = B28(w).
+
+**5.6 What the octad is, then.** The 28 roots of B28 are the 28 nonsingular points (duads) of *any* octad structure compatible with (ω, a plus-type form Q): for a plus-type point P ∈ C, the map k ↦ P + k identifies {k : Q_P(k) = 1} (28 duads of the S8-structure defined by Q_P) with the roots of B28. So "duads ↔ roots of B28" and "tetrads and 0 ↔ roots of x⁸B28 + 1 shifted by P"; the eight points of an octad are not in C at all in a canonical way, which is why B8 does not exist (Section 4) while B28 does. The user's octic programme is therefore replaced by: B28 plays the role of B, the triads play no role, and the sixteen-point lemma becomes the Arf-invariant count on the torsor.
+
+## 6. Programme (updated)
+
+1. ~~Derive T'~~ done (5.1).
+2. ~~Frobenius table~~ done (4.1); still open: why the counts are not polynomial in q.
+3. ~~Intrinsic symplectic form~~ done (5.4): ω(a, b) = Tr(d_b T'(d_a)), canonical; prove it in general (the proof is the computation in 5.4 plus the trace-parity fact Tr(k) = 0 on K ∩ F_{q^m}, needed for ω(a, a) = 0).
+4. **Prove the genus-4 hexad formula** (5.5): ε(w) = +1 iff B28(w) = 0. Route: Part IV's proof with B28 in place of B (γ_w² = B28(w), (wγ_w)^{2^?} = γ_w), or directly: ε(w) = −(−1)^{Arf Q_w} and Q_w minus-type iff B28(w) = 0, the latter being the statement that the plus-type points are exactly the roots of x⁸B28 + 1.
+5. **Prove L' = x⁸B28² + B28 + 1** from the structure of T' (in Part III this came from the deformation L + εx⁴ ↔ uA + √ε; here the natural guess is the same with x⁸ and a "Bluher-type" polynomial of degree 27: B28 = xA27 + 1, A27 = x²⁷ + λ5⁴x¹¹ + x⁹ + λ3⁴x³ + λ5²x + 1).
+6. **Trace parity, sign rules, class-by-class signs** as in Part IV, now on the 28 + 36 torsor with Sp6(F2) symmetry: the analogue of Table 2 (Frobenius types, 4.1), the analogue of the hexad terms table, and the analogue of Theorems 3.9, 3.17, 3.20 for the 24 Frobenius types.
+7. Only then: the Legendre-interval degree governed by the x⁹ family (d = 10 if the pattern of Parts I–III persists) and its constant.
+
+## 7. Open questions recorded
+
+* Q1. ~~Is Frobenius on K symplectic for an intrinsic form?~~ Yes (5.4, verified for 104 parameters); its class lives in Sp6(F2) (all observed GL-types are Sp6(F2)-types, 4.1).
+* Q2. Are all 30 conjugacy classes of Sp6(F2) realised, and why are the counts of the 24 GL-types not polynomial in q (4.1)? Which refinement of the GL-type (the Sp6-class? the 28/36 orbit data of Frobenius?) has polynomial counts?
+* Q3. ~~Sign at the triads / closed form of B8.~~ Replaced by 5.5: B28 is the canonical polynomial; prove ε = +1 ⟺ B28(w) = 0.
+* Q4. ~~What replaces the sixteen-point lemma for non-octad parameters?~~ The torsor (5.4): every Frobenius preserves some quadratic form (verified in Sp6(F2): the 469700 elements outside every conjugate of S8 preserve a minus-type form, i.e. lie in a conjugate of O6−(2) ≅ W(E6), order 51840), and the count Σ_C ε(w)(−1)^{φ(w)} = ±8 needs no octad.
+* Q5 (new). Is there a direct description of ε(w) in the ground field, as Part IV's κ0 and trace-parity results describe the hexad terms, e.g. ε(w) = (−1)^{Tr(Nγ_w)} with γ_w² = B28(w)?

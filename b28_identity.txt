@@ -1,0 +1,40 @@
+﻿==============================================================================================================
+Part 1: exact division in F_2[l5, l3][x]
+==============================================================================================================
+genus 2 (l5 = 1): (L'+1) / B = x^10 + l3^2 x^6 + x^5 + x^4 + 1,  remainder 0
+   B-adic digits of L'+1: ['0', '1', 'x^4']
+
+genus 4 (l9 = 1): B_28 = x^28 + l5^4 x^12 + x^10 + l3^4 x^4 + l5^2 x^2 + x + 1
+   (L'+1) / B_28 = F_36 = x^36 + l5^4 x^20 + x^18 + l3^4 x^12 + l5^2 x^10 + x^9 + x^8 + 1
+   remainder = 0   (exact division: True)
+   B_28-adic digits of L'+1 (d_0, d_1, d_2):
+      d_0 = 0
+      d_1 = 1
+      d_2 = x^8
+   F_36 + x^8 B_28 = 1
+
+==============================================================================================================
+Part 2: eps = +1 <=> B_28(w) = 0 at q = 16, 32 (random parameters)
+==============================================================================================================
+  q=16: (l5,l3)=(10, 4) Frob order  4, |C_+|=28, F_+ == B_28: True, torsor checks True
+  q=16: (l5,l3)=(12, 1) Frob order 12, |C_+|=28, F_+ == B_28: True, torsor checks True
+  q=16: (l5,l3)=( 2, 3) Frob order  9, |C_+|=28, F_+ == B_28: True, torsor checks True
+  q=16: (l5,l3)=(11, 1) Frob order  7, |C_+|=28, F_+ == B_28: True, torsor checks True
+  q=16: (l5,l3)=( 6, 1) Frob order  6, |C_+|=28, F_+ == B_28: True, torsor checks True
+  q=16: (l5,l3)=( 2,13) Frob order  7, |C_+|=28, F_+ == B_28: True, torsor checks True
+  q=16: (l5,l3)=(13, 2) Frob order 10, |C_+|=28, F_+ == B_28: True, torsor checks True
+  q=16: (l5,l3)=( 7, 2) Frob order  6, |C_+|=28, F_+ == B_28: True, torsor checks True
+  q=16: (l5,l3)=(13, 1) Frob order  7, |C_+|=28, F_+ == B_28: True, torsor checks True
+  q=16: (l5,l3)=( 3, 7) Frob order  9, |C_+|=28, F_+ == B_28: True, torsor checks True
+  q=16: (l5,l3)=( 1,12) Frob order 12, |C_+|=28, F_+ == B_28: True, torsor checks True
+  q=16: (l5,l3)=( 1, 7) Frob order  3, |C_+|=28, F_+ == B_28: True, torsor checks True
+  q=16: 12/12 agree
+  q=32: (l5,l3)=( 2, 8) Frob order  4, |C_+|=28, F_+ == B_28: True, torsor checks True
+  q=32: (l5,l3)=(18,26) Frob order 12, |C_+|=28, F_+ == B_28: True, torsor checks True
+  q=32: (l5,l3)=( 9, 7) Frob order  7, |C_+|=28, F_+ == B_28: True, torsor checks True
+  q=32: (l5,l3)=(19,11) Frob order  6, |C_+|=28, F_+ == B_28: True, torsor checks True
+  q=32: (l5,l3)=( 6,12) Frob order  9, |C_+|=28, F_+ == B_28: True, torsor checks True
+  q=32: (l5,l3)=(23, 6) Frob order  6, |C_+|=28, F_+ == B_28: True, torsor checks True
+  q=32: (l5,l3)=( 4, 3) Frob order  7, |C_+|=28, F_+ == B_28: True, torsor checks True
+  q=32: (l5,l3)=(13,31) Frob order 12, |C_+|=28, F_+ == B_28: True, torsor checks True
+  q=32: 8/8 agree
