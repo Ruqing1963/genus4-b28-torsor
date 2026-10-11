@@ -219,8 +219,17 @@ def poly_of_matrix(p, A, d):
 IRR6 = irreducibles(6)
 
 
+def canon_ranks(ranks):
+    """rank sequence of p(A)^j up to and including the first stabilised value, trailing repetitions removed"""
+    r = list(ranks)
+    while len(r) > 1 and r[-1] == r[-2]:
+        r.pop()
+    return tuple(r)
+
+
 def module_invariant(A, d=6):
-    """complete isomorphism invariant of the F_2[z]-module (F_2^d, A): ranks of p(A)^j, j = 1..d, all irreducible p"""
+    """complete isomorphism invariant of the F_2[z]-module (F_2^d, A): ranks of p(A)^j, j = 1..d, all irreducible p
+    (canonical form: the strictly decreasing part of the sequence, see canon_ranks)"""
     inv = []
     for p in IRR6:
         PA = poly_of_matrix(p, A, d)
@@ -232,7 +241,7 @@ def module_invariant(A, d=6):
             if ranks[-1] == ranks[-2] if len(ranks) > 1 else False:
                 break
         if ranks[0] < d:
-            inv.append((p, tuple(ranks)))
+            inv.append((p, canon_ranks(ranks)))
     return tuple(inv)
 
 

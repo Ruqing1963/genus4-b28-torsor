@@ -59,7 +59,7 @@ So the genus-4 analogue of the hexad theorem of Part III is at least *sometimes*
 
 ## 4. The octad obstruction (new, computed)
 
-Frobenius Fq-Frob = (x ↦ x^q) acts F2-linearly on K. If a Frobenius-stable octad exists, Frobenius permutes its 8 points and therefore acts on K as an element of S8 in its 6-dimensional representation on V. For coefficients in F2 the Frobenius x ↦ x² acts on K as the companion matrix Cℓ of ℓ(z) (K ≅ F2[z]/(ℓ) as F2[z]-module), and the Fq-Frobenius as Cℓ^k. Comparing the F2[z]-module (K, Cℓ^k) with the modules of the 22 classes of S8 on V (complete invariant: ranks of p(g)^j for all irreducible p; the 22 classes give 20 module types, with 6 2 = 6 1 1 and 3 3 2 = 3 3 1 1 on V) gives, for λ9 = 1:
+Frobenius Fq-Frob = (x ↦ x^q) acts F2-linearly on K. If a Frobenius-stable octad exists, Frobenius permutes its 8 points and therefore acts on K as an element of S8 in its 6-dimensional representation on V. For coefficients in F2 the Frobenius x ↦ x² acts on K as the companion matrix Cℓ of ℓ(z) (K ≅ F2[z]/(ℓ) as F2[z]-module), and the Fq-Frobenius as Cℓ^k. Comparing the F2[z]-module (K, Cℓ^k) with the modules of the 22 classes of S8 on V (complete invariant: ranks of p(g)^j for all irreducible p; the 22 classes give 20 module types, since 4 2 2 and 4 1⁴, and 2⁴ and 2² 1⁴, act on V with the same elementary divisors) gives, for λ9 = 1:
 
 | (λ5, λ3) | ℓ(z) | order of Frob₂ on K | k (mod order) for which an octad is *possible* | k for which **no** Frobenius-stable octad exists |
 |---|---|---|---|---|
@@ -71,6 +71,30 @@ Frobenius Fq-Frob = (x ↦ x^q) acts F2-linearly on K. If a Frobenius-stable oct
 "Possible" means the necessary condition (Frobenius module realised in S8) holds; it is sufficient in the row (1, 1) where the octad was constructed, and in general still requires a Frobenius-stable choice of the base point r1 in the affine coset. The order-9 row was also checked by brute force: K = {x ∈ F512 : x⁶⁴ + x⁸ + x = 0} has 64 elements and Frobenius has a single orbit of length 63 on K \ 0, order 9, and S8 has no element of order 9.
 
 **Consequence.** In genus 2 every λ carries a hexad (Part III, hexad theorem) because S6 = Sp4(F2): whatever Frobenius does on the four-dimensional kernel, it is a permutation of six things. In genus 4 the Frobenius on K lands in a group of order 1451520 (if, as the self-reciprocal shape of ℓ suggests, it preserves a symplectic form on K; this is the genus-4 version of the "Frobenius-stable symplectic forms" count of Part III and has not been proved here), of which only a third of the elements, by Chebotarev heuristics 67.6 % of the parameters λ if the monodromy is all of Sp6(F2), permute an octad. The genus-4 theory therefore has two regimes, **octad parameters** (Frobenius conjugate into S8: an octic B8 exists, and the hexad formula of Part IV should have an octad analogue with signs ε = +1 at the 8 roots and a sign to be determined at the 56 triads) and **non-octad parameters** (Frobenius of order 9, or of orders 3, 4, 6, 8, 12 outside every conjugate of S8: no B8 at all, and the Gauss sums must be handled directly on the 64-point coset with its symplectic, not permutation, symmetry). The curve y² + y = x⁹ + λ1x over Fq with 3 ∤ k is the simplest non-octad example.
+
+### 4.1 The genus-4 Frobenius table (computed, `ore_algebra_k6.py`, `genus4_class_stats.py`, `sp6_module_types.py`)
+
+**Method.** In the twisted polynomial ring Fq{τ} (τc = c²τ) the kernel polynomial is P = τ⁶ + λ5⁸τ⁵ + λ3⁸τ⁴ + τ³ + λ3⁴τ² + λ5²τ + 1 (λ9 = 1). For g ∈ F2[z], dim ker g(Frob_q)|K = τ-degree of the right gcd of P and g(τ^k), because the right ideal (P, g(τ^k)) is principal with generator whose kernel is the intersection of the kernels. The ranks of p(Frob_q)^j for all irreducible p are therefore computable by right Euclid in Fq{τ}, with no field extension, and they determine the elementary divisors of the F2[z]-module K, i.e. the GL6(F2)-conjugacy class of Frobenius. The implementation was checked against the companion-matrix computation of Section 4 for all λ ∈ F2², q = 2, 4, 8 (identical invariants) and passes ring and division tests. Independently, the GL6(F2)-types of all 1451520 elements of Sp6(F2) were computed with numpy (`sp6_module_types.json`): Sp6(F2) has 24 GL-types, of which 20 occur in S8 (the 22 classes of S8 give 20 module types on V: 4 2 2 ≡ 4 1⁴ and 2⁴ ≡ 2² 1⁴ coincide) and 22 in O6−(2).
+
+**Results for all (λ5, λ3) ∈ Fq², q = 2 … 512** (`genus4_class_stats.txt`, `genus4_counts.json`; q = 512 is 262144 parameters, 4.5 minutes):
+
+| q | octad parameters | proportion |
+|---|---|---|
+| 2 | 2 / 4 | 0.500 |
+| 4 | 12 / 16 | 0.750 |
+| 8 | 48 / 64 | 0.750 |
+| 16 | 200 / 256 | 0.781 |
+| 32 | 792 / 1024 | 0.773 |
+| 64 | 3240 / 4096 | 0.791 |
+| 128 | 13008 / 16384 | 0.794 |
+| 256 | 51544 / 65536 | 0.787 |
+| 512 | 207064 / 262144 | 0.790 |
+
+* **Every Frobenius type that occurs is a type of Sp6(F2)**, at every q (0 exceptions among 349 000 parameters), and by q = 512 all 24 types of Sp6(F2) occur. This is strong evidence for Q1 (Frobenius on K is symplectic for an intrinsic form) and Q2 (the monodromy of the family is all of Sp6(F2)).
+* **The per-type frequencies at q = 512 match the Chebotarev prediction count(type)/|Sp6(F2)| to three digits** for every type above 0.5 %: e.g. 7 1: 0.1445 vs 1/7 = 0.1429; 8: 0.1230 vs 1/8; order 9 (non-octad): 0.1109 vs 1/9; 5 2 1: 0.1004 vs 1/10; 4 3 1, 6 1 1 and the non-octad type (z²+z+1)³: 0.084 vs 1/12; 5 3: 0.0660 vs 1/15.
+* **The octad proportion converges to 0.790, not to 0.676.** The relevant prediction is the fraction of Sp6(F2) whose *GL6-type* occurs in S8, which is 1146880/1451520 = 0.7901, not the fraction 981820/1451520 = 0.6764 of elements lying in a conjugate of S8 *inside* Sp6(F2). The reason is that an octad brings its own symplectic form (the polar form of Q = |x|/2) which need not coincide with the intrinsic form of K; a Frobenius-stable octad exists as soon as Frobenius is GL-conjugate into S8. The 165060 elements of Sp6(F2) in the difference are those whose GL-type is an S8 type but which preserve no plus-type form polarising to the intrinsic ω. (If one insists on octads whose form is ω, 0.676 is the right number; the data decide for 0.790, which is one more sign that the octad is not intrinsic to ω.)
+* **Non-octad parameters** are exactly the four GL-types (z⁶+z³+1) [order 9, 1/9 of all], (z²+z+1)³ [order 12 or 3, 1/12], (z²+z+1)(z²+z+1)² [1/72] and (z²+z+1)³ semisimple [order 3, 1/648]: all have characteristic polynomial a power of Φ3 or Φ9, i.e. Frobenius acts through the field F4 or F64 structure of K. Total predicted 0.2099, observed 0.210 at q = 512.
+* **Unlike Table 2 of Part III, the counts are not quadratic polynomials in q on a fixed parity of k.** Interpolation through the three largest q of either parity fails on the remaining points for every type; the deviations from the main term |C| q²/|G| are of size O(q) (q = 512: 7 1 gives 37885 against 37449.1; 8 gives 32244 against 32768; order 9 gives 29061 against 29127.1). The lower-order terms presumably depend on k modulo the orders 3, 7, 9, 15 that occur, or are genuine Frobenius traces of a non-constant local system; nine values of q cannot decide this. This is a second genuine difference from genus 2, where the eleven counts are exact polynomials.
 
 ## 5. Programme
 

@@ -1,0 +1,36 @@
+﻿ring tests in F_8{tau}:
+  associativity: True;  a = r*b + s with deg s < deg b: True;  b | rgcd(a*b, c*b): True
+  tau * c == c^2 * tau: True
+
+comparison with the companion-matrix computation (coefficients in F_2, q = 2, 4, 8):
+  q=2: (l5,l3)=(0,0)  order of Frob_q on K =  9  Ore == matrix: True   char poly z^6+z^3+1                    elementary divisors (z^6+z^3+1)                        non-octad
+  q=2: (l5,l3)=(0,1)  order of Frob_q on K = 15  Ore == matrix: True   char poly z^6+z^4+z^3+z^2+1            elementary divisors (z^2+z+1) (z^4+z^3+z^2+z+1)        S_8 class 5 3
+  q=2: (l5,l3)=(1,0)  order of Frob_q on K = 12  Ore == matrix: True   char poly z^6+z^5+z^3+z+1              elementary divisors (z^2+z+1)^3                        non-octad
+  q=2: (l5,l3)=(1,1)  order of Frob_q on K =  7  Ore == matrix: True   char poly z^6+z^5+z^4+z^3+z^2+z+1      elementary divisors (z^3+z+1) (z^3+z^2+1)              S_8 class 7 1
+  q=4: (l5,l3)=(0,0)  order of Frob_q on K =  9  Ore == matrix: True   char poly z^6+z^3+1                    elementary divisors (z^6+z^3+1)                        non-octad
+  q=4: (l5,l3)=(0,1)  order of Frob_q on K = 15  Ore == matrix: True   char poly z^6+z^4+z^3+z^2+1            elementary divisors (z^2+z+1) (z^4+z^3+z^2+z+1)        S_8 class 5 3
+  q=4: (l5,l3)=(1,0)  order of Frob_q on K =  6  Ore == matrix: True   char poly z^6+z^5+z^3+z+1              elementary divisors (z^2+z+1) (z^2+z+1)^2              non-octad
+  q=4: (l5,l3)=(1,1)  order of Frob_q on K =  7  Ore == matrix: True   char poly z^6+z^5+z^4+z^3+z^2+z+1      elementary divisors (z^3+z+1) (z^3+z^2+1)              S_8 class 7 1
+  q=8: (l5,l3)=(0,0)  order of Frob_q on K =  3  Ore == matrix: True   char poly z^6+z^5+z^3+z+1              elementary divisors (z^2+z+1) (z^2+z+1) (z^2+z+1)      non-octad
+  q=8: (l5,l3)=(0,1)  order of Frob_q on K =  5  Ore == matrix: True   char poly z^6+z^5+z+1                  elementary divisors (z+1) (z+1) (z^4+z^3+z^2+z+1)      S_8 class 5 1 1 1
+  q=8: (l5,l3)=(1,0)  order of Frob_q on K =  4  Ore == matrix: True   char poly z^6+z^4+z^2+1                elementary divisors (z+1)^3 (z+1)^3                    S_8 class 4 4
+  q=8: (l5,l3)=(1,1)  order of Frob_q on K =  7  Ore == matrix: True   char poly z^6+z^5+z^4+z^3+z^2+z+1      elementary divisors (z^3+z+1) (z^3+z^2+1)              S_8 class 7 1
+all agree: True
+
+q = 4: all sixteen (l5, l3) in F_4^2  (F_4 = F_2[w]/(w^2+w+1), elements 0,1,2=w,3=w+1):
+  (l5,l3)=(0,0): order  9, char poly z^6+z^3+1                    divisors (z^6+z^3+1)                        non-octad
+  (l5,l3)=(0,1): order 15, char poly z^6+z^4+z^3+z^2+1            divisors (z^2+z+1) (z^4+z^3+z^2+z+1)        S_8 class 5 3
+  (l5,l3)=(0,2): order 10, char poly z^6+z^5+z+1                  divisors (z+1)^2 (z^4+z^3+z^2+z+1)          S_8 class 5 2 1
+  (l5,l3)=(0,3): order 10, char poly z^6+z^5+z+1                  divisors (z+1)^2 (z^4+z^3+z^2+z+1)          S_8 class 5 2 1
+  (l5,l3)=(1,0): order  6, char poly z^6+z^5+z^3+z+1              divisors (z^2+z+1) (z^2+z+1)^2              non-octad
+  (l5,l3)=(1,1): order  7, char poly z^6+z^5+z^4+z^3+z^2+z+1      divisors (z^3+z+1) (z^3+z^2+1)              S_8 class 7 1
+  (l5,l3)=(1,2): order  6, char poly z^6+1                        divisors (z+1)^2 (z^2+z+1)^2                S_8 class 6 1 1
+  (l5,l3)=(1,3): order  6, char poly z^6+1                        divisors (z+1)^2 (z^2+z+1)^2                S_8 class 6 1 1
+  (l5,l3)=(2,0): order  7, char poly z^6+z^5+z^4+z^3+z^2+z+1      divisors (z^3+z+1) (z^3+z^2+1)              S_8 class 7 1
+  (l5,l3)=(2,1): order 12, char poly z^6+z^5+z^3+z+1              divisors (z^2+z+1)^3                        non-octad
+  (l5,l3)=(2,2): order  8, char poly z^6+z^4+z^2+1                divisors (z+1)^6                            S_8 class 8
+  (l5,l3)=(2,3): order  8, char poly z^6+z^4+z^2+1                divisors (z+1)^6                            S_8 class 8
+  (l5,l3)=(3,0): order  7, char poly z^6+z^5+z^4+z^3+z^2+z+1      divisors (z^3+z+1) (z^3+z^2+1)              S_8 class 7 1
+  (l5,l3)=(3,1): order 12, char poly z^6+z^5+z^3+z+1              divisors (z^2+z+1)^3                        non-octad
+  (l5,l3)=(3,2): order  8, char poly z^6+z^4+z^2+1                divisors (z+1)^6                            S_8 class 8
+  (l5,l3)=(3,3): order  8, char poly z^6+z^4+z^2+1                divisors (z+1)^6                            S_8 class 8
