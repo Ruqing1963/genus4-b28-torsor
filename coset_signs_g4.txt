@@ -1,0 +1,216 @@
+﻿================================================================================================================
+genus 4: canonical signs on the coset, quadratic-form torsor, canonical factor F_+
+================================================================================================================
+
+--- q = 2 (F_q = F_2[w]/(w+1)) ---
+  (l5,l3)=(0,0): Frob order  9, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(0,1): Frob order 15, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(1,0): Frob order 12, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(1,1): Frob order  7, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  summary ((|C+|,|C-|), stable, quadratic, same omega, alternating, nondegenerate, Arf rule, intrinsic omega) -> count:
+     ((28, 36), True, True, True, True, True, True, True): 4
+
+  reduced polynomials of the coefficients of F_+ over F_2 (monomials l5^a l3^b with 0 <= a, b < q, coefficients in F_q as ints;
+  an exponent a >= (q-1)/2 may also be read as a - (q-1), e.g. l5^-1 = l5^(-2) on l5 != 0):
+    x^28: 1
+    x^12: l5^1
+    x^10: 1
+    x^ 4: l3^1
+    x^ 2: l5^1
+    x^ 1: 1
+    x^ 0: 1
+  (2 s)
+
+--- q = 4 (F_q = F_2[w]/(w^2+w+1)) ---
+  (l5,l3)=(0,0): Frob order  9, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(0,1): Frob order 15, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(0,2): Frob order 10, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(0,3): Frob order 10, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 0, 0, 3, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(1,0): Frob order  6, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(1,1): Frob order  7, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(1,2): Frob order  6, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 1, 0, 2, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(1,3): Frob order  6, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 1, 0, 3, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(2,0): Frob order  7, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 3, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(2,1): Frob order 12, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 3, 0, 1, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(2,2): Frob order  8, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 3, 0, 2, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(2,3): Frob order  8, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 3, 0, 3, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(3,0): Frob order  7, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(3,1): Frob order 12, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 2, 0, 1, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(3,2): Frob order  8, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 2, 0, 2, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(3,3): Frob order  8, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 2, 0, 3, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  summary ((|C+|,|C-|), stable, quadratic, same omega, alternating, nondegenerate, Arf rule, intrinsic omega) -> count:
+     ((28, 36), True, True, True, True, True, True, True): 16
+
+  reduced polynomials of the coefficients of F_+ over F_4 (monomials l5^a l3^b with 0 <= a, b < q, coefficients in F_q as ints;
+  an exponent a >= (q-1)/2 may also be read as a - (q-1), e.g. l5^1 = l5^(-2) on l5 != 0):
+    x^28: 1
+    x^12: l5^1
+    x^10: 1
+    x^ 4: l3^1
+    x^ 2: l5^2
+    x^ 1: 1
+    x^ 0: 1
+  (21 s)
+
+--- q = 8 (F_q = F_2[w]/(w^3+w+1)) ---
+  (l5,l3)=(0,0): Frob order  3, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(0,1): Frob order  5, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(0,2): Frob order  7, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 0, 0, 6, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(0,3): Frob order 10, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 0, 0, 7, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(0,4): Frob order  7, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(0,5): Frob order 10, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 0, 0, 3, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(0,6): Frob order  7, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 0, 0, 4, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(0,7): Frob order 10, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 0, 0, 5, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(1,0): Frob order  4, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(1,1): Frob order  7, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(1,2): Frob order  6, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 1, 0, 6, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(1,3): Frob order  7, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 1, 0, 7, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(1,4): Frob order  6, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 1, 0, 2, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(1,5): Frob order  7, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 1, 0, 3, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(1,6): Frob order  6, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 1, 0, 4, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(1,7): Frob order  7, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 1, 0, 5, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(2,0): Frob order  9, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 4, 0, 0, 0, 0, 0, 0, 0, 1, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(2,1): Frob order  8, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 4, 0, 1, 0, 0, 0, 0, 0, 1, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(2,2): Frob order  7, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 4, 0, 6, 0, 0, 0, 0, 0, 1, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(2,3): Frob order 12, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 4, 0, 7, 0, 0, 0, 0, 0, 1, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(2,4): Frob order  9, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 4, 0, 2, 0, 0, 0, 0, 0, 1, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(2,5): Frob order  6, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 4, 0, 3, 0, 0, 0, 0, 0, 1, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(2,6): Frob order 12, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 4, 0, 4, 0, 0, 0, 0, 0, 1, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(2,7): Frob order 10, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 4, 0, 5, 0, 0, 0, 0, 0, 1, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(3,0): Frob order  8, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 5, 0, 0, 0, 0, 0, 0, 0, 1, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(3,1): Frob order 12, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 5, 0, 1, 0, 0, 0, 0, 0, 1, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(3,2): Frob order 12, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 5, 0, 6, 0, 0, 0, 0, 0, 1, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(3,3): Frob order 15, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 5, 0, 7, 0, 0, 0, 0, 0, 1, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(3,4): Frob order  4, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 5, 0, 2, 0, 0, 0, 0, 0, 1, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(3,5): Frob order  7, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 5, 0, 3, 0, 0, 0, 0, 0, 1, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(3,6): Frob order 10, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 5, 0, 4, 0, 0, 0, 0, 0, 1, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(3,7): Frob order  9, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 5, 0, 5, 0, 0, 0, 0, 0, 1, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(4,0): Frob order  9, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 6, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(4,1): Frob order  8, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 6, 0, 1, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(4,2): Frob order 12, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 6, 0, 6, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(4,3): Frob order 10, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 6, 0, 7, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(4,4): Frob order  7, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 6, 0, 2, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(4,5): Frob order 12, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 6, 0, 3, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(4,6): Frob order  9, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 6, 0, 4, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(4,7): Frob order  6, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 6, 0, 5, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(5,0): Frob order  8, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 7, 0, 0, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(5,1): Frob order 12, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 7, 0, 1, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(5,2): Frob order 10, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 7, 0, 6, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(5,3): Frob order  9, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 7, 0, 7, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(5,4): Frob order 12, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 7, 0, 2, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(5,5): Frob order 15, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 7, 0, 3, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(5,6): Frob order  4, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 7, 0, 4, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(5,7): Frob order  7, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 7, 0, 5, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(6,0): Frob order  9, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(6,1): Frob order  8, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 2, 0, 1, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(6,2): Frob order  9, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 2, 0, 6, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(6,3): Frob order  6, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 2, 0, 7, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(6,4): Frob order 12, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 2, 0, 2, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(6,5): Frob order 10, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 2, 0, 3, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(6,6): Frob order  7, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 2, 0, 4, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(6,7): Frob order 12, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 2, 0, 5, 0, 0, 0, 0, 0, 1, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(7,0): Frob order  8, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 3, 0, 0, 0, 0, 0, 0, 0, 1, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(7,1): Frob order 12, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 3, 0, 1, 0, 0, 0, 0, 0, 1, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(7,2): Frob order  4, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 3, 0, 6, 0, 0, 0, 0, 0, 1, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(7,3): Frob order  7, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 3, 0, 7, 0, 0, 0, 0, 0, 1, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(7,4): Frob order 10, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 3, 0, 2, 0, 0, 0, 0, 0, 1, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(7,5): Frob order  9, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 3, 0, 3, 0, 0, 0, 0, 0, 1, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(7,6): Frob order 12, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 3, 0, 4, 0, 0, 0, 0, 0, 1, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  (l5,l3)=(7,7): Frob order 15, |C_+|=28, |C_-|=36, eps Frobenius-stable True, Q_P quadratic True, polar form independent of P True, alternating True, nondegenerate True, Arf(Q_P)=1 <=> eps(P)=+1 True, omega = Tr(d_b T'(d_a)) True
+        F_+ coefficients (x^0 .. x^28): [1, 1, 3, 0, 5, 0, 0, 0, 0, 0, 1, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]
+  summary ((|C+|,|C-|), stable, quadratic, same omega, alternating, nondegenerate, Arf rule, intrinsic omega) -> count:
+     ((28, 36), True, True, True, True, True, True, True): 64
+
+  reduced polynomials of the coefficients of F_+ over F_8 (monomials l5^a l3^b with 0 <= a, b < q, coefficients in F_q as ints;
+  an exponent a >= (q-1)/2 may also be read as a - (q-1), e.g. l5^5 = l5^(-2) on l5 != 0):
+    x^28: 1
+    x^12: l5^4
+    x^10: 1
+    x^ 4: l3^4
+    x^ 2: l5^2
+    x^ 1: 1
+    x^ 0: 1
+  (138 s)

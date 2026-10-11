@@ -1,0 +1,208 @@
+﻿==============================================================================================================
+Part 0: genus 2, lambda = (1,1) over F_2: B = u^6+u^2+u+1, L' = x^16+x^8+x^4+x^2+x
+==============================================================================================================
+  (L'+1)/B = z^10+z^6+z^5+z^4+1, remainder 0;  B-adic digits of (L'+1)/B: ['1', 'z^4']   (expected [1, x^4]: (L'+1)/B = x^4 B + 1)
+
+==============================================================================================================
+Part 1: lambda = (1,1,1) over F_2: the seven Frobenius-stable octads and their octics
+==============================================================================================================
+  m_alpha = z^7+z^6+1              B_8 = z^8+z^6+z+1                  T_56 = (L'+1)/B_8 has B_8-adic digits (d_0, d_1, ...):
+      d_0 = 1
+      d_1 = z^4+1
+      d_2 = 0
+      d_3 = z^5+z^4+z^3+1
+      d_4 = z^4+z^2
+      d_5 = 1
+      d_6 = 0
+      d_7 = 1
+      pattern x^32 B^3 + x^b B + 1: False
+  m_alpha = z^7+z^6+z^3+z+1        B_8 = z^8+z^6+z^4+z^3+z^2+1        T_56 = (L'+1)/B_8 has B_8-adic digits (d_0, d_1, ...):
+      d_0 = z^6+z^4+z^2+z+1
+      d_1 = z^7+z^5+1
+      d_2 = z^4+z^2
+      d_3 = z^7+z^6+z^5+z^4+z^2+1
+      d_4 = z^4+z^2
+      d_5 = 1
+      d_6 = 0
+      d_7 = 1
+      pattern x^32 B^3 + x^b B + 1: False
+  m_alpha = z^7+z^6+z^4+z+1        B_8 = z^8+z^6+z^5+z^4+z^2+1        T_56 = (L'+1)/B_8 has B_8-adic digits (d_0, d_1, ...):
+      d_0 = z^6+z^3+z
+      d_1 = z^5+z^4+z^3+z+1
+      d_2 = z^4+z^2+z
+      d_3 = z^7+z^5+z^4+z^3+z
+      d_4 = z^4+z
+      d_5 = 1
+      d_6 = 0
+      d_7 = 1
+      pattern x^32 B^3 + x^b B + 1: False
+  m_alpha = z^7+z^6+z^4+z^2+1      B_8 = z^8+z^6+z^5+z^4+z^3+z^2+z+1  T_56 = (L'+1)/B_8 has B_8-adic digits (d_0, d_1, ...):
+      d_0 = z^6+z^3+1
+      d_1 = z^4
+      d_2 = 0
+      d_3 = z^6+z^3+z
+      d_4 = z^4+z
+      d_5 = 1
+      d_6 = 0
+      d_7 = 1
+      pattern x^32 B^3 + x^b B + 1: False
+  m_alpha = z^7+z^6+z^5+z^2+1      B_8 = z^8+z^5+z^3+z^2+z+1          T_56 = (L'+1)/B_8 has B_8-adic digits (d_0, d_1, ...):
+      d_0 = z^4+z^2+z
+      d_1 = z^7+z^6
+      d_2 = z^4+z+1
+      d_3 = z^5+z^3+z^2+z
+      d_4 = 1
+      d_5 = 0
+      d_6 = 0
+      d_7 = 1
+      pattern x^32 B^3 + x^b B + 1: False
+  m_alpha = z^7+z^6+z^5+z^3+z^2+z+1 B_8 = z^8+z^5+z^4+1                T_56 = (L'+1)/B_8 has B_8-adic digits (d_0, d_1, ...):
+      d_0 = z^4+z+1
+      d_1 = z^5+z^2+z+1
+      d_2 = z^4+z
+      d_3 = z^5+z^4+1
+      d_4 = 1
+      d_5 = 0
+      d_6 = 0
+      d_7 = 1
+      pattern x^32 B^3 + x^b B + 1: False
+  m_alpha = z^7+z^6+z^5+z^4+z^2+z+1 B_8 = z^8+z^4+z^3+1                T_56 = (L'+1)/B_8 has B_8-adic digits (d_0, d_1, ...):
+      d_0 = z^6+z^2+z
+      d_1 = z^4+z^3+1
+      d_2 = 1
+      d_3 = 0
+      d_4 = 0
+      d_5 = 0
+      d_6 = 0
+      d_7 = 1
+      pattern x^32 B^3 + x^b B + 1: False
+  18 irreducible septics, 7 with normal roots = 7 Frobenius-stable octads (all roots of a normal septic have trace 1 automatically)
+  Conclusion: none of the seven octics satisfies an identity of the genus-2 shape; the digits are not monomials.
+
+==============================================================================================================
+Part 2: factorisation of the coset polynomial L'(x) + 1 over F_2 for lambda in F_2^2 (sympy)
+==============================================================================================================
+  (l5,l3)=(0,0): factor degrees [9, 9, 9, 9, 9, 9, 9, 1]   (= Frobenius orbit sizes on the 64-point coset)
+  (l5,l3)=(0,1): factor degrees [15, 15, 15, 5, 5, 5, 3, 1]   (= Frobenius orbit sizes on the 64-point coset)
+  (l5,l3)=(1,0): factor degrees [12, 12, 12, 12, 6, 6, 3, 1]   (= Frobenius orbit sizes on the 64-point coset)
+  (l5,l3)=(1,1): factor degrees [7, 7, 7, 7, 7, 7, 7, 7, 7, 1]   (= Frobenius orbit sizes on the 64-point coset)
+  For (0,0) the degrees are 1 and 9: no product of factors has degree 8, so no octic B_8(u; l5, l3) with
+  polynomial coefficients can divide L'+1 for all lambda.  (For (1,1) the degree-1 factor is x+1 = u+1 and the
+  seven septics of Part 1 are among the degree-7 factors.)
+
+==============================================================================================================
+Part 3: Frobenius-stable octads for every octad parameter over F_q, q = 4, 8
+==============================================================================================================
+
+--- q = 4 (F_q = F_2[w]/(w^2+w+1), elements written as integers 0..3) ---
+  (l5,l3)=(0,1) class 5 3        Frob order 15, coset orbit sizes [15, 15, 15, 5, 5, 5, 3, 1], Frobenius-stable octads: 3
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (0,0,0,1,1,1,1) (0,1,0,0,0,0,1) (1,0,1,0,0,1,1)
+  (l5,l3)=(0,2) class 5 2 1      Frob order 10, coset orbit sizes [10, 10, 10, 5, 5, 5, 5, 5, 5, 2, 1, 1], Frobenius-stable octads: 6
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (3,1,1,3,2,1,3) (3,1,3,3,2,3,1) (2,3,0,0,3,3,2) (2,3,1,0,1,0,2) (2,0,1,0,2,3,2) (2,0,3,0,0,3,1)
+  (l5,l3)=(0,3) class 5 2 1      Frob order 10, coset orbit sizes [10, 10, 10, 5, 5, 5, 5, 5, 5, 2, 1, 1], Frobenius-stable octads: 6
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (2,1,1,2,3,1,2) (2,1,2,2,3,2,1) (3,0,1,0,3,2,3) (3,0,2,0,0,2,1) (3,2,0,0,2,2,3) (3,2,1,0,1,0,3)
+  (l5,l3)=(1,1) class 7 1        Frob order  7, coset orbit sizes [7, 7, 7, 7, 7, 7, 7, 7, 7, 1], Frobenius-stable octads: 7
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (1,1,1,0,1,0,1) (1,1,1,1,1,1,1) (1,0,1,1,1,0,1) (1,0,0,0,0,1,1) (0,1,1,0,0,0,1) (0,1,0,1,1,1,1) (0,0,1,1,0,0,1)
+  (l5,l3)=(1,2) class 6 1 1      Frob order  6, coset orbit sizes [6, 6, 6, 6, 6, 6, 6, 6, 6, 3, 3, 2, 1, 1], Frobenius-stable octads: 0
+  (l5,l3)=(1,3) class 6 1 1      Frob order  6, coset orbit sizes [6, 6, 6, 6, 6, 6, 6, 6, 6, 3, 3, 2, 1, 1], Frobenius-stable octads: 0
+  (l5,l3)=(2,0) class 7 1        Frob order  7, coset orbit sizes [7, 7, 7, 7, 7, 7, 7, 7, 7, 1], Frobenius-stable octads: 7
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (3,1,0,2,2,0,3) (2,0,0,2,0,0,1) (3,0,3,2,3,3,3) (1,0,2,0,1,1,2) (0,1,0,3,0,1,2) (2,1,0,3,2,0,3) (1,1,3,2,3,0,3)
+  (l5,l3)=(2,2) class 8          Frob order  8, coset orbit sizes [8, 8, 8, 8, 8, 8, 4, 4, 4, 2, 1, 1], Frobenius-stable octads: 0
+  (l5,l3)=(2,3) class 8          Frob order  8, coset orbit sizes [8, 8, 8, 8, 8, 8, 4, 4, 4, 2, 1, 1], Frobenius-stable octads: 0
+  (l5,l3)=(3,0) class 7 1        Frob order  7, coset orbit sizes [7, 7, 7, 7, 7, 7, 7, 7, 7, 1], Frobenius-stable octads: 7
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (2,1,0,3,3,0,2) (2,0,2,3,2,2,2) (3,0,0,3,0,0,1) (0,1,0,2,0,1,3) (1,1,2,3,2,0,2) (3,1,0,2,3,0,2) (1,0,3,0,1,1,3)
+  (l5,l3)=(3,2) class 8          Frob order  8, coset orbit sizes [8, 8, 8, 8, 8, 8, 4, 4, 4, 2, 1, 1], Frobenius-stable octads: 0
+  (l5,l3)=(3,3) class 8          Frob order  8, coset orbit sizes [8, 8, 8, 8, 8, 8, 4, 4, 4, 2, 1, 1], Frobenius-stable octads: 0
+  summary (class, number of octads) -> number of parameters: {('5 2 1', 6): 2, ('5 3', 3): 1, ('6 1 1', 0): 2, ('7 1', 7): 3, ('8', 0): 4}
+
+--- q = 8 (F_q = F_2[w]/(w^3+w+1), elements written as integers 0..7) ---
+  (l5,l3)=(0,1) class 5 1 1 1    Frob order  5, coset orbit sizes [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 1, 1, 1, 1], Frobenius-stable octads: 0
+  (l5,l3)=(0,2) class 7 1        Frob order  7, coset orbit sizes [7, 7, 7, 7, 7, 7, 7, 7, 7, 1], Frobenius-stable octads: 7
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (6,0,0,6,0,2,1) (7,0,6,0,1,4,4) (1,0,3,6,2,6,6) (0,5,1,6,5,5,7) (1,5,0,5,3,4,6) (6,5,1,3,3,1,5) (7,5,4,0,1,6,1)
+  (l5,l3)=(0,3) class 5 2 1      Frob order 10, coset orbit sizes [10, 10, 10, 5, 5, 5, 5, 5, 5, 2, 1, 1], Frobenius-stable octads: 6
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (4,0,5,0,6,7,3) (3,0,6,7,0,7,1) (5,6,7,3,0,4,7) (3,0,7,7,7,3,7) (4,0,0,0,5,7,4) (5,6,1,3,6,2,3)
+  (l5,l3)=(0,4) class 7 1        Frob order  7, coset orbit sizes [7, 7, 7, 7, 7, 7, 7, 7, 7, 1], Frobenius-stable octads: 7
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (1,0,5,2,4,2,2) (2,7,1,5,5,1,7) (2,0,0,2,0,4,1) (3,0,2,0,1,6,6) (3,7,6,0,1,2,1) (1,7,0,7,5,6,2) (0,7,1,2,7,7,3)
+  (l5,l3)=(0,5) class 5 2 1      Frob order 10, coset orbit sizes [10, 10, 10, 5, 5, 5, 5, 5, 5, 2, 1, 1], Frobenius-stable octads: 6
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (6,0,7,0,2,3,5) (7,2,1,5,2,4,5) (5,0,3,3,3,5,3) (5,0,2,3,0,3,1) (6,0,0,0,7,3,6) (7,2,3,5,0,6,3)
+  (l5,l3)=(0,6) class 7 1        Frob order  7, coset orbit sizes [7, 7, 7, 7, 7, 7, 7, 7, 7, 1], Frobenius-stable octads: 7
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (4,0,0,4,0,6,1) (4,3,1,7,7,1,3) (0,3,1,4,3,3,5) (5,0,4,0,1,2,2) (5,3,2,0,1,4,1) (1,0,7,4,6,4,4) (1,3,0,3,7,2,4)
+  (l5,l3)=(0,7) class 5 2 1      Frob order 10, coset orbit sizes [10, 10, 10, 5, 5, 5, 5, 5, 5, 2, 1, 1], Frobenius-stable octads: 6
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (7,0,5,5,5,7,5) (3,4,1,7,4,6,7) (7,0,4,5,0,5,1) (3,4,5,7,0,2,5) (2,0,3,0,4,5,7) (2,0,0,0,3,5,2)
+  (l5,l3)=(1,0) class 4 4        Frob order  4, coset orbit sizes [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1], Frobenius-stable octads: 0
+  (l5,l3)=(1,1) class 7 1        Frob order  7, coset orbit sizes [7, 7, 7, 7, 7, 7, 7, 7, 7, 1], Frobenius-stable octads: 7
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (1,0,0,0,0,1,1) (0,0,1,1,0,0,1) (0,1,0,1,1,1,1) (1,1,1,0,1,0,1) (1,1,1,1,1,1,1) (0,1,1,0,0,0,1) (1,0,1,1,1,0,1)
+  (l5,l3)=(1,2) class 6 1 1      Frob order  6, coset orbit sizes [6, 6, 6, 6, 6, 6, 6, 6, 6, 3, 3, 2, 1, 1], Frobenius-stable octads: 0
+  (l5,l3)=(1,3) class 7 1        Frob order  7, coset orbit sizes [7, 7, 7, 7, 7, 7, 7, 7, 7, 1], Frobenius-stable octads: 7
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (1,1,3,7,5,4,6) (4,7,7,6,1,4,2) (6,1,7,0,3,0,6) (2,6,2,6,4,6,2) (3,7,0,5,5,0,7) (5,6,6,2,0,0,7) (7,0,3,0,4,4,6)
+  (l5,l3)=(1,4) class 6 1 1      Frob order  6, coset orbit sizes [6, 6, 6, 6, 6, 6, 6, 6, 6, 3, 3, 2, 1, 1], Frobenius-stable octads: 0
+  (l5,l3)=(1,5) class 7 1        Frob order  7, coset orbit sizes [7, 7, 7, 7, 7, 7, 7, 7, 7, 1], Frobenius-stable octads: 7
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (5,3,0,7,7,0,3) (2,1,3,0,5,0,2) (6,3,3,2,1,6,4) (3,0,5,0,6,6,2) (4,2,4,2,6,2,4) (7,2,2,4,0,0,3) (1,1,5,3,7,6,2)
+  (l5,l3)=(1,6) class 6 1 1      Frob order  6, coset orbit sizes [6, 6, 6, 6, 6, 6, 6, 6, 6, 3, 3, 2, 1, 1], Frobenius-stable octads: 0
+  (l5,l3)=(1,7) class 7 1        Frob order  7, coset orbit sizes [7, 7, 7, 7, 7, 7, 7, 7, 7, 1], Frobenius-stable octads: 7
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (7,5,0,3,3,0,5) (1,1,7,5,3,2,4) (4,1,5,0,7,0,4) (6,4,6,4,2,4,6) (5,0,7,0,2,2,4) (2,5,5,4,1,2,6) (3,4,4,6,0,0,5)
+  (l5,l3)=(2,1) class 8          Frob order  8, coset orbit sizes [8, 8, 8, 8, 8, 8, 4, 4, 4, 2, 1, 1], Frobenius-stable octads: 0
+  (l5,l3)=(2,2) class 7 1        Frob order  7, coset orbit sizes [7, 7, 7, 7, 7, 7, 7, 7, 7, 1], Frobenius-stable octads: 7
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (5,0,7,0,3,2,1) (1,2,1,6,3,7,5) (4,2,1,7,0,0,4) (0,6,2,7,1,7,7) (5,6,7,4,1,7,5) (1,4,0,7,3,5,7) (4,4,6,5,4,1,2)
+  (l5,l3)=(2,3) class 4 3 1      Frob order 12, coset orbit sizes [12, 12, 12, 6, 4, 4, 4, 3, 3, 2, 1, 1], Frobenius-stable octads: 4
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (1,5,5,1,6,1,5) (5,5,5,3,1,6,5) (5,5,6,3,4,2,3) (1,5,0,1,2,6,3)
+  (l5,l3)=(2,5) class 6 2        Frob order  6, coset orbit sizes [6, 6, 6, 6, 6, 6, 6, 6, 3, 3, 3, 3, 1, 1, 1, 1], Frobenius-stable octads: 0
+  (l5,l3)=(2,7) class 5 2 1      Frob order 10, coset orbit sizes [10, 10, 10, 5, 5, 5, 5, 5, 5, 2, 1, 1], Frobenius-stable octads: 6
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (2,3,6,0,1,2,4) (5,4,1,2,0,7,1) (2,0,6,0,0,5,6) (2,0,1,0,4,5,2) (5,4,4,2,2,3,6) (2,3,6,0,5,4,2)
+  (l5,l3)=(3,0) class 8          Frob order  8, coset orbit sizes [8, 8, 8, 8, 8, 8, 4, 4, 4, 2, 1, 1], Frobenius-stable octads: 0
+  (l5,l3)=(3,2) class 4 3 1      Frob order 12, coset orbit sizes [12, 12, 12, 6, 4, 4, 4, 3, 3, 2, 1, 1], Frobenius-stable octads: 4
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (2,0,0,0,4,5,6) (6,0,3,0,7,3,4) (6,0,6,0,5,3,3) (2,0,3,0,3,5,2)
+  (l5,l3)=(3,3) class 5 3        Frob order 15, coset orbit sizes [15, 15, 15, 5, 5, 5, 3, 1], Frobenius-stable octads: 3
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (1,5,3,4,7,0,2) (5,0,6,0,3,2,5) (6,1,7,4,2,5,4)
+  (l5,l3)=(3,4) class 4 2 1 1    Frob order  4, coset orbit sizes [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1], Frobenius-stable octads: 0
+  (l5,l3)=(3,5) class 7 1        Frob order  7, coset orbit sizes [7, 7, 7, 7, 7, 7, 7, 7, 7, 1], Frobenius-stable octads: 7
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (1,0,0,0,4,1,5) (3,5,3,7,3,3,3) (2,5,1,2,2,1,6) (3,0,1,6,5,4,4) (1,5,3,0,7,7,6) (0,5,2,5,3,7,7) (2,0,6,6,0,2,1)
+  (l5,l3)=(3,6) class 5 2 1      Frob order 10, coset orbit sizes [10, 10, 10, 5, 5, 5, 5, 5, 5, 2, 1, 1], Frobenius-stable octads: 6
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (4,0,6,0,6,7,7) (3,5,3,6,2,7,6) (4,0,3,0,5,7,6) (0,1,0,3,3,4,2) (3,5,0,6,1,4,7) (0,1,4,3,4,7,6)
+  (l5,l3)=(4,1) class 8          Frob order  8, coset orbit sizes [8, 8, 8, 8, 8, 8, 4, 4, 4, 2, 1, 1], Frobenius-stable octads: 0
+  (l5,l3)=(4,3) class 5 2 1      Frob order 10, coset orbit sizes [10, 10, 10, 5, 5, 5, 5, 5, 5, 2, 1, 1], Frobenius-stable octads: 6
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (4,0,1,0,6,7,4) (4,0,2,0,0,7,2) (7,6,1,4,0,3,1) (4,5,2,0,1,4,6) (7,6,6,4,4,5,2) (4,5,2,0,7,6,4)
+  (l5,l3)=(4,4) class 7 1        Frob order  7, coset orbit sizes [7, 7, 7, 7, 7, 7, 7, 7, 7, 1], Frobenius-stable octads: 7
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (1,4,1,2,5,3,7) (6,6,2,7,6,1,4) (0,2,4,3,1,3,3) (7,0,3,0,5,4,1) (7,2,3,6,1,3,7) (1,6,0,3,5,7,3) (6,4,1,3,0,0,6)
+  (l5,l3)=(4,5) class 4 3 1      Frob order 12, coset orbit sizes [12, 12, 12, 6, 4, 4, 4, 3, 3, 2, 1, 1], Frobenius-stable octads: 4
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (7,7,7,5,1,2,7) (1,7,7,1,2,1,7) (1,7,0,1,4,2,5) (7,7,2,5,6,4,5)
+  (l5,l3)=(4,7) class 6 2        Frob order  6, coset orbit sizes [6, 6, 6, 6, 6, 6, 6, 6, 3, 3, 3, 3, 1, 1, 1, 1], Frobenius-stable octads: 0
+  (l5,l3)=(5,0) class 8          Frob order  8, coset orbit sizes [8, 8, 8, 8, 8, 8, 4, 4, 4, 2, 1, 1], Frobenius-stable octads: 0
+  (l5,l3)=(5,2) class 5 2 1      Frob order 10, coset orbit sizes [10, 10, 10, 5, 5, 5, 5, 5, 5, 2, 1, 1], Frobenius-stable octads: 6
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (6,0,2,0,2,3,3) (0,1,6,5,6,3,2) (5,7,5,2,4,3,2) (0,1,0,5,5,6,4) (5,7,0,2,1,6,3) (6,0,5,0,7,3,2)
+  (l5,l3)=(5,4) class 4 3 1      Frob order 12, coset orbit sizes [12, 12, 12, 6, 4, 4, 4, 3, 3, 2, 1, 1], Frobenius-stable octads: 4
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (4,0,5,0,5,7,4) (2,0,2,0,7,5,5) (2,0,5,0,3,5,6) (4,0,0,0,6,7,2)
+  (l5,l3)=(5,5) class 5 3        Frob order 15, coset orbit sizes [15, 15, 15, 5, 5, 5, 3, 1], Frobenius-stable octads: 3
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (1,7,5,6,3,0,4) (7,0,2,0,5,4,7) (2,1,3,6,4,7,6)
+  (l5,l3)=(5,6) class 4 2 1 1    Frob order  4, coset orbit sizes [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1], Frobenius-stable octads: 0
+  (l5,l3)=(5,7) class 7 1        Frob order  7, coset orbit sizes [7, 7, 7, 7, 7, 7, 7, 7, 7, 1], Frobenius-stable octads: 7
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (4,0,2,2,0,4,1) (1,0,0,0,6,1,7) (5,7,5,3,5,5,5) (5,0,1,2,7,6,6) (4,7,1,4,4,1,2) (1,7,5,0,3,3,2) (0,7,4,7,5,3,3)
+  (l5,l3)=(6,1) class 8          Frob order  8, coset orbit sizes [8, 8, 8, 8, 8, 8, 4, 4, 4, 2, 1, 1], Frobenius-stable octads: 0
+  (l5,l3)=(6,3) class 6 2        Frob order  6, coset orbit sizes [6, 6, 6, 6, 6, 6, 6, 6, 3, 3, 3, 3, 1, 1, 1, 1], Frobenius-stable octads: 0
+  (l5,l3)=(6,5) class 5 2 1      Frob order 10, coset orbit sizes [10, 10, 10, 5, 5, 5, 5, 5, 5, 2, 1, 1], Frobenius-stable octads: 6
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (3,2,1,6,0,5,1) (6,0,4,0,0,3,4) (6,7,4,0,1,6,2) (6,0,1,0,2,3,6) (3,2,2,6,6,7,4) (6,7,4,0,3,2,6)
+  (l5,l3)=(6,6) class 7 1        Frob order  7, coset orbit sizes [7, 7, 7, 7, 7, 7, 7, 7, 7, 1], Frobenius-stable octads: 7
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (1,6,1,4,7,5,3) (3,0,5,0,7,6,1) (1,2,0,5,7,3,5) (0,4,6,5,1,5,5) (3,4,5,2,1,5,3) (2,6,1,5,0,0,2) (2,2,4,3,2,1,6)
+  (l5,l3)=(6,7) class 4 3 1      Frob order 12, coset orbit sizes [12, 12, 12, 6, 4, 4, 4, 3, 3, 2, 1, 1], Frobenius-stable octads: 4
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (1,3,3,1,4,1,3) (3,3,3,7,1,4,3) (3,3,4,7,2,6,7) (1,3,0,1,6,4,7)
+  (l5,l3)=(7,0) class 8          Frob order  8, coset orbit sizes [8, 8, 8, 8, 8, 8, 4, 4, 4, 2, 1, 1], Frobenius-stable octads: 0
+  (l5,l3)=(7,2) class 4 2 1 1    Frob order  4, coset orbit sizes [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1], Frobenius-stable octads: 0
+  (l5,l3)=(7,3) class 7 1        Frob order  7, coset orbit sizes [7, 7, 7, 7, 7, 7, 7, 7, 7, 1], Frobenius-stable octads: 7
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (7,0,1,4,3,2,2) (7,3,7,5,7,7,7) (1,3,7,0,5,5,4) (1,0,0,0,2,1,3) (6,3,1,6,6,1,4) (6,0,4,4,0,6,1) (0,3,6,3,7,5,5)
+  (l5,l3)=(7,4) class 5 2 1      Frob order 10, coset orbit sizes [10, 10, 10, 5, 5, 5, 5, 5, 5, 2, 1, 1], Frobenius-stable octads: 6
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (2,0,4,0,4,5,5) (0,1,0,7,7,2,6) (7,3,0,4,1,2,5) (7,3,7,4,6,5,4) (2,0,7,0,3,5,4) (0,1,2,7,2,5,4)
+  (l5,l3)=(7,6) class 4 3 1      Frob order 12, coset orbit sizes [12, 12, 12, 6, 4, 4, 4, 3, 3, 2, 1, 1], Frobenius-stable octads: 4
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (6,0,0,0,2,3,4) (4,0,7,0,5,7,2) (4,0,4,0,3,7,7) (6,0,7,0,7,3,6)
+  (l5,l3)=(7,7) class 5 3        Frob order 15, coset orbit sizes [15, 15, 15, 5, 5, 5, 3, 1], Frobenius-stable octads: 3
+        B_8 coefficients (b_6,b_5,b_4,b_3,b_2,b_1,b_0): (4,1,5,2,6,3,2) (1,3,7,2,5,0,6) (3,0,4,0,7,6,3)
+  summary (class, number of octads) -> number of parameters: {('4 2 1 1', 0): 3, ('4 3 1', 4): 6, ('4 4', 0): 1, ('5 1 1 1', 0): 1, ('5 2 1', 6): 9, ('5 3', 3): 3, ('6 1 1', 0): 3, ('6 2', 0): 3, ('7 1', 7): 13, ('8', 0): 6}
+
+==============================================================================================================
+Part 4: rational points of the coset versus the Frobenius module, all lambda, q <= 64
+==============================================================================================================
+  q =   2: #(coset cap F_q) = 2^dim ker(Frob-1) for all lambda: True;  minimum 1;  distribution {1: 4}
+  q =   4: #(coset cap F_q) = 2^dim ker(Frob-1) for all lambda: True;  minimum 1;  distribution {1: 8, 2: 8}
+  q =   8: #(coset cap F_q) = 2^dim ker(Frob-1) for all lambda: True;  minimum 1;  distribution {1: 32, 2: 24, 4: 8}
+  q =  16: #(coset cap F_q) = 2^dim ker(Frob-1) for all lambda: True;  minimum 1;  distribution {1: 112, 2: 112, 4: 28, 8: 4}
+  q =  32: #(coset cap F_q) = 2^dim ker(Frob-1) for all lambda: True;  minimum 1;  distribution {1: 448, 2: 420, 4: 140, 8: 15, 16: 1}
+  q =  64: #(coset cap F_q) = 2^dim ker(Frob-1) for all lambda: True;  minimum 1;  distribution {1: 1744, 2: 1728, 4: 540, 8: 80, 16: 4}

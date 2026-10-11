@@ -1,0 +1,49 @@
+﻿==============================================================================================================
+Part A: the polar identity of q(x) = T(x) + 2 Tr(l9 x^9 + l5 x^5 + l3 x^3 + l1 x)
+==============================================================================================================
+  F_16, lambda in F_16^3 (l9 != 0), 983040 evaluations: failures of q(x+y)-q(x)-q(y) = 2Tr(y T'(x)): 0;  of the variant + 2Tr(x)Tr(y): 245760
+  F_64, lambda in F_8^3 (l9 != 0), 1835008 evaluations: failures of q(x+y)-q(x)-q(y) = 2Tr(y T'(x)): 0;  of the variant + 2Tr(x)Tr(y): 458752
+
+==============================================================================================================
+Part B: fibre sums and the sign eps(w) on the rational coset points, q = 2
+==============================================================================================================
+
+(l5,l3) = (1,1), m = 7: F_{2^14}, rational coset points |T'^{-1}(1) cap F_{2^7}| = 64
+  l1 = 0: s_14 = +0-1024i;  fibres outside the coset nonzero: 0;  q^m sum eps(w) i^q(w) = +0-1024i  (equal: True)
+         eps = +1 on 28 points, -1 on 36 points;  sign pattern Frobenius-stable: True
+         distribution of (eps(w), q^(m)(w)): {(-1, 1): 36, (1, 1): 28}
+         octad 1: roots cap (eps=+1) = 7 of 8, roots cap (eps=-1) = 1
+         octad 2: roots cap (eps=+1) = 0 of 8, roots cap (eps=-1) = 8
+         octad 3: roots cap (eps=+1) = 0 of 8, roots cap (eps=-1) = 8
+         octad 4: roots cap (eps=+1) = 7 of 8, roots cap (eps=-1) = 1
+         octad 5: roots cap (eps=+1) = 7 of 8, roots cap (eps=-1) = 1
+         octad 6: roots cap (eps=+1) = 0 of 8, roots cap (eps=-1) = 8
+         octad 7: roots cap (eps=+1) = 7 of 8, roots cap (eps=-1) = 1
+  l1 = 1: s_14 = +0+1024i;  fibres outside the coset nonzero: 0;  q^m sum eps(w) i^q(w) = +0+1024i  (equal: True)
+         eps = +1 on 28 points, -1 on 36 points;  sign pattern Frobenius-stable: True
+         distribution of (eps(w), q^(m)(w)): {(-1, 3): 36, (1, 3): 28}
+         octad 1: roots cap (eps=+1) = 7 of 8, roots cap (eps=-1) = 1
+         octad 2: roots cap (eps=+1) = 0 of 8, roots cap (eps=-1) = 8
+         octad 3: roots cap (eps=+1) = 0 of 8, roots cap (eps=-1) = 8
+         octad 4: roots cap (eps=+1) = 7 of 8, roots cap (eps=-1) = 1
+         octad 5: roots cap (eps=+1) = 7 of 8, roots cap (eps=-1) = 1
+         octad 6: roots cap (eps=+1) = 0 of 8, roots cap (eps=-1) = 8
+         octad 7: roots cap (eps=+1) = 7 of 8, roots cap (eps=-1) = 1
+  (0 s)
+
+(l5,l3) = (0,0), m = 9: F_{2^18}, rational coset points |T'^{-1}(1) cap F_{2^9}| = 64
+  l1 = 0: s_18 = +0+4096i;  fibres outside the coset nonzero: 0;  q^m sum eps(w) i^q(w) = +0+4096i  (equal: True)
+         eps = +1 on 28 points, -1 on 36 points;  sign pattern Frobenius-stable: True
+         distribution of (eps(w), q^(m)(w)): {(-1, 3): 36, (1, 3): 28}
+  l1 = 1: s_18 = +0-4096i;  fibres outside the coset nonzero: 0;  q^m sum eps(w) i^q(w) = +0-4096i  (equal: True)
+         eps = +1 on 28 points, -1 on 36 points;  sign pattern Frobenius-stable: True
+         distribution of (eps(w), q^(m)(w)): {(-1, 1): 36, (1, 1): 28}
+  (2 s)
+
+(l5,l3) = (1,1), m = 1..6: coset cap F_{2^m} = {1}; s_{2m} = 2^m eps_m(1) i^{q^(m)(1)}
+  m = 1: l1=0: s_2 = +0+2i, q^(m)(1) = 3, eps(1) = -1+0i;  l1=1: s_2 = +0-2i, q^(m)(1) = 1, eps(1) = -1-0i;  
+  m = 2: l1=0: s_4 = +4+0i, q^(m)(1) = 2, eps(1) = -1-0i;  l1=1: s_4 = +4+0i, q^(m)(1) = 2, eps(1) = -1-0i;  
+  m = 3: l1=0: s_6 = +0-8i, q^(m)(1) = 1, eps(1) = -1-0i;  l1=1: s_6 = +0+8i, q^(m)(1) = 3, eps(1) = -1+0i;  
+  m = 4: l1=0: s_8 = -16+0i, q^(m)(1) = 0, eps(1) = -1+0i;  l1=1: s_8 = -16+0i, q^(m)(1) = 0, eps(1) = -1+0i;  
+  m = 5: l1=0: s_10 = +0+32i, q^(m)(1) = 3, eps(1) = -1+0i;  l1=1: s_10 = +0-32i, q^(m)(1) = 1, eps(1) = -1-0i;  
+  m = 6: l1=0: s_12 = +64+0i, q^(m)(1) = 2, eps(1) = -1-0i;  l1=1: s_12 = +64+0i, q^(m)(1) = 2, eps(1) = -1-0i;  
