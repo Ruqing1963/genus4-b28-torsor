@@ -6,6 +6,9 @@
 \usepackage{enumitem}
 \usepackage[margin=1in]{geometry}
 \usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
 \usepackage{hyperref}
 \hypersetup{colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black,
   pdftitle={The degree-28 polynomial of a genus-4 linearised operator, the quadratic-form torsor, and the symplectic monodromy Sp6(F2)},
@@ -63,7 +66,7 @@ In Parts~I--IV of the author's work on prime polynomials in Legendre intervals o
 \[
 \qq_\lambda(x)=\Tw(x)+2\Tr(\lambda_5x^5+\lambda_3x^3+\lambda_1x)
 \]
-on the fields $\F_{q^{2m}}$, where $\Tw(x)=\Tr_{W_2(\F_{2^n})/W_2(\F_2)}[x]$ is the Witt-vector trace of the Teichm\"uller representative. These are the forms whose Gauss sums are the traces of Frobenius on the rank-four Witt--Artin--Schreier sheaves of Brylinski and Katz \cite{Brylinski,Katz}, and whose signs are the Brown invariants of \cite{Brown}. Part~III showed that the radical of the polar form of $\qq_\lambda$ is the four-dimensional space $\Kk_\lambda$ of pairwise sums of the six roots of the sextic $B_\lambda(u)=\lambda_5^2u^6+\lambda_3^2u^2+\lambda_5u+1$, through the identity $L'_\lambda=x^4B_\lambda^2+B_\lambda+1$ for the linearised polynomial $L'_\lambda$ of the polar operator, so that the Frobenius acts on $\Kk_\lambda$ through $S_6\cong\Sp_4(\F_2)$ (the hexad); Part~IV proved the \emph{hexad formula} expressing the Gauss sum over $\F_{q^{2m}}$ as a signed sum of at most sixteen fourth roots of unity indexed by the coset $T_\lambda'^{-1}(1)$, with sign $+1$ at the six roots and $-1$ at the ten synthematic totals.
+on the fields $\F_{q^{2m}}$, where $\Tw(x)=\Tr_{W_2(\F_{2^n})/W_2(\F_2)}[x]$ is the Witt-vector trace of the Teichm\"uller representative. These are the forms whose Gauss sums are the traces of Frobenius on the rank-four Witt--Artin--Schreier sheaves of Brylinski \cite{Brylinski}, the sheaves with which Katz \cite{KatzKR,KatzEKR} answered the questions of Keating and Rudnick \cite{KeatingRudnick} on primes in short intervals of $\F_q[t]$ in odd characteristic; their signs are the Brown invariants of \cite{Brown}. Part~III showed that the radical of the polar form of $\qq_\lambda$ is the four-dimensional space $\Kk_\lambda$ of pairwise sums of the six roots of the sextic $B_\lambda(u)=\lambda_5^2u^6+\lambda_3^2u^2+\lambda_5u+1$, through the identity $L'_\lambda=x^4B_\lambda^2+B_\lambda+1$ for the linearised polynomial $L'_\lambda$ of the polar operator, so that the Frobenius acts on $\Kk_\lambda$ through $S_6\cong\Sp_4(\F_2)$ (the hexad); Part~IV proved the \emph{hexad formula} expressing the Gauss sum over $\F_{q^{2m}}$ as a signed sum of at most sixteen fourth roots of unity indexed by the coset $T_\lambda'^{-1}(1)$, with sign $+1$ at the six roots and $-1$ at the ten synthematic totals.
 
 The present paper treats the next member of the Gold family, the supersingular genus-$4$ curves
 \begin{equation}\label{eq:curve}
@@ -130,8 +133,38 @@ The two factors in \eqref{eq:B} are coprime and $L'_\lambda+1$ is separable, so 
 \end{corollary}
 
 \begin{remark}\label{rem:AS}
-$Y=x^8B_\lambda$ is a polynomial solution of $Y^2+Y=x^8(L'_\lambda+1)$; the only other solution is $Y+1$, not divisible by $x^8$. So $B_\lambda$ is determined by $L'_\lambda$, and is produced by the coefficient recursion $b_d=c_d+b_{(d-8)/2}^2$ ($c_d$ the coefficients of $L'_\lambda+1$), which terminates because of the shape \eqref{eq:Lp}. The same recursion with $x^4$ in place of $x^8$ gives the sextic of Part~III from the genus-$2$ operator. For the Gold family with exponents $2^i+1$, $i\le n$, one obtains in this way $L'=x^{2^n}B^2+B+1$ with $\deg B=2^{2n-1}-2^{n-1}$, the number of quadratic forms of Arf invariant $1$ on $\F_2^{2n}$ with a given polar form; Theorem~\ref{thm:torsor} explains why.
+$Y=x^8B_\lambda$ is a polynomial solution of $Y^2+Y=x^8(L'_\lambda+1)$; the only other solution is $Y+1$, not divisible by $x^8$. So $B_\lambda$ is determined by $L'_\lambda$, and is produced by the coefficient recursion $b_d=c_d+b_{(d-8)/2}^2$ ($c_d$ the coefficients of $L'_\lambda+1$), which terminates because of the shape \eqref{eq:Lp}. The same recursion with $x^4$ in place of $x^8$ gives the sextic of Part~III from the genus-$2$ operator, and with $x^2$ the linear polynomial $B=\lambda_3x+1$ for the elliptic curves $y^2+y=\lambda_3x^3+\lambda_1x$ ($L'=\lambda_3^2x^4+x^2+\lambda_3x=x^2B^2+B+1$). For the Gold family with exponents $2^i+1$, $i\le n$, one obtains $L'=x^{2^n}B^2+B+1$ with $\deg B=2^{2n-1}-2^{n-1}$, the number of quadratic forms of Arf invariant $1$ on $\F_2^{2n}$ with a given polar form; Theorem~\ref{thm:torsor} explains why. The three levels are linked by specialisation: setting the top coefficient to zero squares everything,
+\begin{gather*}
+L'_{(0,\lambda_5,\lambda_3)}=\bigl(L'^{\,g=2}_{(\lambda_5,\lambda_3)}\bigr)^2,\qquad
+B_{(0,\lambda_5,\lambda_3)}=\bigl(\lambda_5^2x^6+\lambda_3^2x^2+\lambda_5x+1\bigr)^2,\\
+\bigl(\lambda_5^2x^6+\lambda_3^2x^2+\lambda_5x+1\bigr)\big|_{\lambda_5=0}=(\lambda_3x+1)^2,
+\end{gather*}
+as one reads off from the formulas (Figure~\ref{fig:tower}).
 \end{remark}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  box/.style={draw,rounded corners=2pt,align=left,font=\scriptsize,inner sep=4pt,minimum width=3.9cm},
+  arr/.style={-{Latex[length=2mm]},thick},
+  lab/.style={font=\scriptsize,midway,fill=white,inner sep=1pt}]
+\node[box] (g4) {\textbf{$n=3$, genus 4}: $y^2+y=\lambda_9x^9+\lambda_5x^5+\lambda_3x^3+\lambda_1x$\\
+ $T'$ of $2$-degree $3$, $\Kk=\F_2^6$, $|\Cc|=64=28+36$\\
+ $B=\lambda_9^4x^{28}+\lambda_5^4x^{12}+\lambda_9^2x^{10}+\lambda_3^4x^4+\lambda_5^2x^2+\lambda_9x+1$\\
+ $L'=x^8B^2+B+1$; $\Sp_6(\F_2)$, $24$ types; octads: $S_8=O_6^+(2)$, index $36$, not canonical};
+\node[box,below=9mm of g4] (g2) {\textbf{$n=2$, genus 2} (Parts III--IV): $y^2+y=\lambda_5x^5+\lambda_3x^3+\lambda_1x$\\
+ $T'$ of $2$-degree $2$, $\Kk=\F_2^4$, $|\Cc|=16=6+10$\\
+ $B=\lambda_5^2x^6+\lambda_3^2x^2+\lambda_5x+1$ (hexad)\\
+ $L'=x^4B^2+B+1$; $\Sp_4(\F_2)=S_6$, $11$ classes; hexad canonical};
+\node[box,below=9mm of g2] (g1) {\textbf{$n=1$, genus 1}: $y^2+y=\lambda_3x^3+\lambda_1x$\\
+ $T'$ of $2$-degree $1$, $\Kk=\F_2^2$, $|\Cc|=4=1+3$\\
+ $B=\lambda_3x+1$;\ $L'=x^2B^2+B+1$; $\Sp_2(\F_2)=S_3$};
+\draw[arr] (g4) -- node[lab,right=2pt] {$\lambda_9\to0$:\ $L'\mapsto L'^2$,\ $B\mapsto B^2$} (g2);
+\draw[arr] (g2) -- node[lab,right=2pt] {$\lambda_5\to0$:\ $L'\mapsto L'^2$,\ $B\mapsto B^2$} (g1);
+\node[font=\scriptsize,anchor=north west,align=left,text width=3.0cm] at ([xshift=4mm,yshift=-2mm]g4.south east) {general $n$: $\Kk=\F_2^{2n}$,\\ $|\Cc|=4^n$\\ $\phantom{|\Cc|}=(2^{2n-1}-2^{n-1})+(2^{2n-1}+2^{n-1})$,\\ $\deg B=2^{2n-1}-2^{n-1}$,\\ $L'=x^{2^n}B^2+B+1$,\\ $\Cc=$ torsor of quadratic forms on $\Kk$; roots of $B$ = Arf $1$};
+\end{tikzpicture}
+\caption{The tower of Gold families: the canonical polynomial $B$ of the coset, the identity $L'=x^{2^n}B^2+B+1$, the $28+36$, $6+10$, $1+3$ splittings of the coset into forms of Arf invariant $1$ and $0$, and the specialisations that square $B$ and $L'$.}\label{fig:tower}
+\end{figure}
 
 \section{The coset-sum theorem}\label{sec:cosetsum}
 
@@ -214,7 +247,13 @@ If $\Cc_\lambda\subset\F_{q^m}$ then, for every $\lambda_1\in\Fq$, $s_{2m}(\lamb
 By Lemmas~\ref{lem:polar} and \ref{lem:trace0}, $\qq^{(m)}_\lambda(w_0+k)=\qq^{(m)}_\lambda(w_0)+2\ell(k)$ with $\ell=\frac12\qq^{(m)}_\lambda|_{\Kk_\lambda}$ linear. Then $\sum_{\Cc_\lambda}\eps(w)i^{\qq^{(m)}(w)}=\eps(w_0)i^{\qq^{(m)}(w_0)}\sum_k(-1)^{(Q_{w_0}+\ell)(k)}=\pm8\,i^{\qq^{(m)}(w_0)}$.
 \end{proof}
 
-For $q=2$ one finds $s_{14}(1,1,1,\lambda_1)=\mp1024\,i$ and $s_{18}(1,0,0,\lambda_1)=\pm4096\,i$ ($\lambda_1=0,1$), in accordance with $8\cdot2^7$ and $8\cdot2^9$.
+For $q=2$ one finds $s_{14}(1,1,1,\lambda_1)=\mp1024\,i$ and $s_{18}(1,0,0,\lambda_1)=\pm4096\,i$ ($\lambda_1=0,1$), in accordance with $8\cdot2^7$ and $8\cdot2^9$. Figure~\ref{fig:torsor} shows the torsor for $\lambda=(1,1,1)$ over $\F_2$ in symplectic coordinates adapted to a plus-type point, with the $28$ roots of $B_\lambda$, a transvection, and the action of the Frobenius.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{fig_torsor.pdf}
+\caption{The coset $\Cc_\lambda$ for $\lambda=(1,1,1)$ over $\F_2$ ($\Cc_\lambda=$ the trace-one elements of $\F_{128}$, $\Kk_\lambda=$ the trace-zero hyperplane). A plus-type point $P$ (ringed) and a symplectic basis $e_1,f_1,e_2,f_2,e_3,f_3$ of $(\Kk_\lambda,\omega_\lambda)$ with $Q_P(e_i)=Q_P(f_i)=0$ are chosen; the point $P+\sum(a_ie_i+b_if_i)$ is drawn at row $a$, column $b$, so that $Q_P=\sum a_ib_i$. Dark discs: the $28$ roots of $B_\lambda$ ($\varepsilon=+1$, Arf invariant $1$); light discs: the $36$ roots of $x^8B_\lambda+1$ ($\varepsilon=-1$). (a) The transvection $t_v$ at a duad $v$ (a difference of two roots of $B_\lambda$) exchanges the points joined by arrows and preserves both sets. (b) The Frobenius $x\mapsto x^2$, of type $7\,1$, has one fixed point and nine $7$-cycles, four inside the roots of $B_\lambda$ and five inside the plus-type points.}\label{fig:torsor}
+\end{figure}
 
 \begin{theorem}[trace parity]\label{thm:traceparity}
 For every $m\ge1$ and every $w\in\Cc_\lambda\cap\F_{q^m}$,
@@ -327,10 +366,20 @@ Hence $s_{2m}(\lambda)=0$ if $Q_{w_r}+\ell_{w_r}$ is not identically zero on $\r
 (i) is Theorems~\ref{thm:cosetsum} and \ref{thm:torsor}(ii),(iii) with $\eps(w_r+k)=\eps(w_r)(-1)^{Q_{w_r}(k)}$, followed by the standard evaluation of the Gauss sum of a quadratic form on a space with radical: it vanishes unless the form vanishes on the radical, and then has absolute value $2^{(\dim+\dim\rad)/2}$. (ii) The restriction of $Q_{w_r}+\ell_{w_r}$ to $R=\rad(\omega_\lambda|_{K_m})$ is a linear form (its polar form vanishes on $R$), affine-linear in $\lambda_1$ through $\Tr_{q^m/2}(\lambda_1k)=\Tr_{q/2}(\lambda_1\Tr_{q^m/q}k)$; the condition that it vanish is a system of at most $r_m$ affine-linear equations on $\lambda_1$. The parity statement is Theorem~\ref{thm:traceparity}. (iii) The first claim holds because $F^n$ is trivial on $\Cc_\lambda\subset\F_{q^n}$; the second is the multiplicity lemma of Part~III ($\Tw_{F_{q^{dt}}}=t\,\Tw_{F_{q^d}}$ on $\F_{q^d}$, and the trace of $f_\lambda$ likewise); for even $t$, $i^{t\qq^{(d)}(w)}=(-1)^{\qq^{(d)}(w)}=(-1)^{\Tr(w)}$ is constant on $\Cc_d$ by Theorem~\ref{thm:traceparity}.
 \end{proof}
 
+\begin{remark}[the $L$-polynomial]\label{rem:lpoly}
+$s_m(\lambda)$ is minus the trace of $F^m$ on the Witt--Artin--Schreier sheaf $\mathcal{L}_{\psi_4}(x,f_\lambda(x))$ on $\mathbb{A}^1$, which is lisse of rank $\deg f_\lambda-1=8$ with Swan conductor $9$ at infinity and pure of weight~$1$ \cite{Brylinski,KatzKR,Deligne}. Hence $L_\lambda(T)=\prod_{i=1}^8(1-\omega_iT)\in\Z[i][T]$ with $|\omega_i|=\sqrt q$, and $s_m=-\sum\omega_i^m$. We computed $s_1,\dots,s_{10}$ for all $\lambda$ with $q=2,4$ (script \texttt{witt\_lpoly\_g4.py}): the Newton identities from $s_1,\dots,s_8$ give $L_\lambda$ with Gaussian-integer coefficients, $s_9,s_{10}$ agree with the prediction (confirming the rank), all $|\omega_i|=\sqrt q$, and the normalised eigenvalues $\omega_i/\sqrt q$ are roots of unity of order $N$ dividing $8n$ ($n$ the Frobenius order; e.g. $N\in\{14,28,56\}$ for type $7\,1$, $N\in\{8,16\}$ for type $8$, $N\in\{9,36,72\}$ for $\Phi_9$, $N\in\{12,24\}$ for $\Phi_3^3$, $N\in\{30,60,120\}$ for $5\,3$). Figure~\ref{fig:phases} shows six types; the rigidity visible there (eigenvalue multisets symmetric under $\omega\mapsto i\omega$ or $\omega\mapsto-\omega$, depending on $\lambda_1$) is the spectral form of Theorem~\ref{thm:structure}(iii): $s_{2m}$ depends on $m$ only through $\gcd(m,n)$ and $m/\gcd(m,n)\bmod4$.
+\end{remark}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{fig_phases.pdf}
+\caption{Normalised Frobenius eigenvalues $\omega_i/\sqrt q$ ($i=1,\dots,8$) of the rank-$8$ Witt sheaf for one parameter of each of six Frobenius types at $q=4$, $\lambda_1=0$ (filled) and $\lambda_1=1$ (open); $N$ is the order of the group of roots of unity they generate.}\label{fig:phases}
+\end{figure}
+
 What Theorem~\ref{thm:structure} leaves open is the sign $\pm$ in (i), the genus-$4$ analogue of the sign laws of Part~IV (Theorems~3.9, 3.17, 3.20 there). Table~\ref{tab:signs} records the data for all parameters with $q\le8$ (script \texttt{genus4\_sign\_rules.py}): for each Frobenius type and each $d\mid n$, the invariants $f_d,r_d$, the number of $\lambda_1$ with $s_{2d}\ne0$, and the set of values of $s_{2d}/q^d$.
 
 %%SIGNTABLE-BEGIN%%
-\begin{table}[p]
+\begin{table}[htbp]
 \centering\scriptsize\renewcommand{\arraystretch}{0.88}
 \caption{Gauss sums $s_{2d}(\lambda)$ by Frobenius type, $d\mid n$, all parameters $(\lambda_5,\lambda_3)\in\F_q^2$ of the type and all $\lambda_1\in\F_q$ ($q=8$; a type absent at $q=8$ is shown at the largest $q\le8$ where it occurs). $f_d=\dim K_d$, $r_d=\dim\rad(\omega|_{K_d})$; ``$\#\lambda_1$'' is the number of $\lambda_1\in\F_q$ with $s_{2d}\ne0$ (with multiplicity over the parameters when it varies); $|s_{2d}|/q^d=2^{(f_d+r_d)/2}$ when nonzero; $W_d=\sum_{\lambda_1\in\F_q}s_{2d}/q^{d+1}$ with its multiplicity over the parameters of the type.}\label{tab:signs}
 \begin{tabular}{llrrrrlrl}
@@ -405,6 +454,7 @@ $\Phi_3,\Phi_3^2$ & 4 & 1 & 1 & 0 & 0 & 4 & 1 & $0$\\
 
 All scripts are in Python (numpy, sympy). \texttt{octad\_combinatorics.py}: the $63$-point geometry, $S_8$, $\Sp_6(\F_2)$ by closure, orbits, element orders. \texttt{genus\_check.py}: Newton polygons of $y^2+y=x^7+\dots$, bilinearity tests, module types of $S_8$, the order-$9$ obstruction. \texttt{ore\_algebra\_k6.py}, \texttt{sp6\_module\_types.py}, \texttt{genus4\_class\_stats.py}: Proposition~\ref{prop:ore}, Table~\ref{tab:types}, Proposition~\ref{prop:stats}. \texttt{octad\_sum\_test.py}: Lemma~\ref{lem:polar} on $\F_{16}$, $\F_{64}$ (all $\lambda$) and the fibre sums over $\F_{2^{14}}$, $\F_{2^{18}}$. \texttt{find\_octic\_identity.py}: Proposition~\ref{prop:octad}(a),(b). \texttt{coset\_signs.py}, \texttt{b28\_identity.py}: $\eps$ from one lift per point, the torsor checks and the interpolation that first produced $B_\lambda$ (all $\lambda$ for $q\le8$, samples at $q=16,32$, general $\lambda_9$ at $q=4,8$), the identities $\gamma_w^4=B_\lambda(w)$, $(w\gamma_w)^2=\gamma_w$ on every coset point for several parameters, and the exact division \eqref{eq:B} in $\F_2[\lambda_9,\lambda_5,\lambda_3][x]$.
 
+\clearpage
 \begin{thebibliography}{99}
 \bibitem{Arf} C. Arf, Untersuchungen \"uber quadratische Formen in K\"orpern der Charakteristik 2, J. reine angew. Math. 183 (1941), 148--167.
 \bibitem{Brown} E. H. Brown, Generalizations of the Kervaire invariant, Ann. of Math. 95 (1972), 368--383.
@@ -414,9 +464,13 @@ All scripts are in Python (numpy, sympy). \texttt{octad\_combinatorics.py}: the 
 \bibitem{ChenIII} R. Chen, Prime polynomials in Legendre intervals over $\F_{2^k}[t]$, III: the hexad, $\Sp_4(\F_2)$ and Witt sums, DOI 10.5281/zenodo.23290724.
 \bibitem{ChenIV} R. Chen, Prime polynomials in Legendre intervals over $\F_{2^k}[t]$, IV: point counts on hexad modular curves, Brown invariants of Witt sheaves, and the constant $X$, DOI 10.5281/zenodo.23299284.
 \bibitem{Atlas} J. H. Conway, R. T. Curtis, S. P. Norton, R. A. Parker, R. A. Wilson, Atlas of Finite Groups, Oxford University Press, 1985.
+\bibitem{Deligne} P. Deligne, La conjecture de Weil. II, Publ. Math. IH\'ES 52 (1980), 137--252.
 \bibitem{vdGvdV} G. van der Geer, M. van der Vlugt, Reed--Muller codes and supersingular curves. I, Compositio Math. 84 (1992), 333--367.
 \bibitem{Katz} N. M. Katz, Gauss Sums, Kloosterman Sums, and Monodromy Groups, Ann. of Math. Studies 116, Princeton University Press, 1988.
+\bibitem{KatzKR} N. M. Katz, Witt vectors and a question of Keating and Rudnick, Int. Math. Res. Not. IMRN 2013, no. 16, 3613--3638.
+\bibitem{KatzEKR} N. M. Katz, Witt vectors and a question of Entin, Keating, and Rudnick, Int. Math. Res. Not. IMRN 2015, no. 14, 5603--5613.
 \bibitem{KatzSarnak} N. M. Katz, P. Sarnak, Random Matrices, Frobenius Eigenvalues, and Monodromy, AMS Colloquium Publications 45, 1999.
+\bibitem{KeatingRudnick} J. P. Keating, Z. Rudnick, The variance of the number of prime polynomials in short intervals and in residue classes, Int. Math. Res. Not. IMRN 2014, no. 1, 259--288.
 \bibitem{LN} R. Lidl, H. Niederreiter, Finite Fields, 2nd ed., Cambridge University Press, 1997, Chapter 3.4 (linearised polynomials).
 \bibitem{Ore} O. Ore, On a special class of polynomials, Trans. Amer. Math. Soc. 35 (1933), 559--584.
 \end{thebibliography}

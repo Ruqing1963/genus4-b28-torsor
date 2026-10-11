@@ -44,7 +44,7 @@ def main():
                             "non-octad(3)": "$\\Phi_3,\\Phi_3,\\Phi_3$"}.get(cls, "non-octad " + cls[cls.index("("):])
                 rows.append(f"{name} & {q if first else ''} & {a['n'] if first else ''} & {d} & {a['f']} & {a['r']} & {nz} & {mag} & {W}\\\\")
                 first = False
-    table = r"""\begin{table}[p]
+    table = r"""\begin{table}[htbp]
 \centering\scriptsize\renewcommand{\arraystretch}{0.88}
 \caption{Gauss sums $s_{2d}(\lambda)$ by Frobenius type, $d\mid n$, all parameters $(\lambda_5,\lambda_3)\in\F_q^2$ of the type and all $\lambda_1\in\F_q$ ($q=8$; a type absent at $q=8$ is shown at the largest $q\le8$ where it occurs). $f_d=\dim K_d$, $r_d=\dim\rad(\omega|_{K_d})$; ``$\#\lambda_1$'' is the number of $\lambda_1\in\F_q$ with $s_{2d}\ne0$ (with multiplicity over the parameters when it varies); $|s_{2d}|/q^d=2^{(f_d+r_d)/2}$ when nonzero; $W_d=\sum_{\lambda_1\in\F_q}s_{2d}/q^{d+1}$ with its multiplicity over the parameters of the type.}\label{tab:signs}
 \begin{tabular}{llrrrrlrl}

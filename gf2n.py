@@ -184,6 +184,8 @@ class BigGF:
     def embed(self, k):
         """F_{2^k} (as in genus_check.GF(k): ints mod IRRED[k]) -> this field; returns the list of images of 0..2^k-1"""
         assert self.N % k == 0
+        if k == 1:
+            return [0, 1]
         f = IRRED[k]
         # a root of f in this field: an element of order dividing 2^k - 1 that is a root of f
         e = (self.order - 1) // ((1 << k) - 1)

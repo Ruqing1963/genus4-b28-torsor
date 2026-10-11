@@ -6,6 +6,10 @@ Independent exploration (not part of the Legendre-interval series Parts I–IV):
 
 * `PROOF_GENUS4_HEXAD.md` — complete proofs: polar identity, L' = x⁸B28² + B28 + 1 (general λ9), the coset-sum theorem (γ_w⁴ = B28(w), (wγ_w)² = γ_w), the torsor theorem (canonical ω, Arf rule), the sixty-four-point lemma.
 * `paper/b28_torsor.tex` (.pdf) — paper draft: "The degree-28 polynomial of a genus-4 linearised operator, the quadratic-form torsor, and the symplectic monodromy Sp6(F2)".
+* `trace_parity_g4.py` → `trace_parity_g4.txt` — the unconditional trace parity theorem Tr_{q^m/2}(w) ≡ mk + f_m, verified on every rational coset point, q ≤ 8 (7880 points, 0 violations).
+* `genus4_sign_rules.py` → `genus4_sign_rules.txt`, `genus4_sign_rules_q*.json`; `make_sign_table.py` — s_{2d} on the Frobenius types (structure theorem, λ₁-sums W_d), Table 2 of the paper.
+* `witt_lpoly_g4.py` → `witt_lpoly_g4.txt/.json` — L-polynomials of the rank-8 Witt sheaf from s_1..s_8 (rank confirmed by s_9, s_10; |ω| = √q; normalised eigenvalues roots of unity).
+* `make_figures_b28.py` → `paper/fig_torsor.pdf`, `paper/fig_phases.pdf` — the figures of the paper (the tower diagram is TikZ in the tex).
 * `OCTAD_THEORY.md` — the memo: verified combinatorics, corrections to the initial premise (the x⁷ family is not supersingular and carries no quadratic form; the orbits 28 + 35 belong to O6+(2), not Sp6(F2)), the explicit octad for x⁹ + x⁵ + x³ over F2, the octad obstruction (Frobenius of order 9 for x⁹), and a programme.
 * `octad_combinatorics.py` → `octad_combinatorics.txt` — closure, dimension, symplectic and quadratic forms, S8 and Sp6(F2) by explicit group closure (orders 40320 and 1451520), orbits, element orders, the 67.6 % of Sp6(F2) lying in a conjugate of S8; the hexad N = 6 for contrast; the general identity Σ C(N, j) = 2^{N−2} − 1.
 * `genus_check.py` → `genus_check.txt` — L-polynomials and Newton polygons of y² + y = x⁷ + … over F2; polar-form bilinearity test; module invariants of the 22 classes of S8 on the octad space; Frobenius module on K = ker T' for the x⁹ family and the octad obstruction table; explicit octad and B8(u) = u⁸ + u⁶ + u + 1.
