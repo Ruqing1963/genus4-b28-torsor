@@ -23,7 +23,8 @@ from matplotlib.patches import FancyArrowPatch
 
 from coset_signs import analyse
 
-plt.rcParams.update({"font.size": 9, "font.family": "serif", "mathtext.fontset": "cm", "pdf.fonttype": 42})
+plt.rcParams.update({"font.size": 9, "font.family": "serif", "mathtext.fontset": "cm", "pdf.fonttype": 42,
+                     "ps.fonttype": 42})
 DARK, LIGHT, GRID = "#1f3a5f", "#d9b99b", "#bbbbbb"
 ORB = ["#c0392b", "#2980b9", "#27ae60", "#8e44ad", "#d35400", "#16a085", "#7f8c8d", "#f39c12", "#2c3e50"]
 
