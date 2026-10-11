@@ -102,8 +102,9 @@ def main():
     kmax = int(sys.argv[1]) if len(sys.argv) > 1 else 7
     _, inv_to_classes, _ = s8_modules()
     sp6 = {}
-    if os.path.exists("sp6_module_types.json"):
-        with open("sp6_module_types.json", encoding="utf-8") as f:
+    DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data")
+    if os.path.exists(os.path.join(DATA, "sp6_module_types.json")):
+        with open(os.path.join(DATA, "sp6_module_types.json"), encoding="utf-8") as f:
             for o in json.load(f):
                 key = tuple((p, tuple(r)) for p, r in o["type"])
                 sp6[key] = o
@@ -161,7 +162,7 @@ def main():
         dump.append({"type": [[p, list(r)] for p, r in inv], "label": divisors_label(inv),
                      "S8_classes": inv_to_classes.get(inv, []), "charpoly": pstr(charpoly_from_invariant(inv)),
                      "counts": {str(q): st.get(inv, 0) for q, st in grand.items()}})
-    with open("genus4_counts.json", "w", encoding="utf-8") as f:
+    with open(os.path.join(DATA, "genus4_counts.json"), "w", encoding="utf-8") as f:
         json.dump(dump, f, indent=1)
     try:
         import sympy as sp

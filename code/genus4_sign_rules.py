@@ -112,7 +112,9 @@ def main():
                     print(f"     d={d:2d}  f={fd} r={rd}  #l1 with s!=0: {nnz}/{q}  values of s_{{2d}}/q^d: {{{', '.join(valset)}}}"
                           f"  W_d = sum_l1 s_{{2d}}/q^(d+1) = {W}  x{cnt} parameters")
         import json
-        with open(f"genus4_sign_rules_q{q}.json", "w", encoding="utf-8") as f:
+        import os
+        DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data")
+        with open(os.path.join(DATA, f"genus4_sign_rules_q{q}.json"), "w", encoding="utf-8") as f:
             json.dump({cls: {d: {"f": a["f"], "r": a["r"], "mag": a["mag"], "n": a["n"], "nz": dict(a["nz"]), "W": dict(a["W"])}
                              for d, a in dd.items()} for cls, dd in agg.items()}, f, indent=1)
 

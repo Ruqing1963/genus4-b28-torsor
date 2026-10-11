@@ -4,6 +4,8 @@ Ruqing Chen (GUT Geoservice Inc., Montreal). Paper: *The degree-28 polynomial of
 
 Independent exploration (not part of the Legendre-interval series Parts I–IV): the 63-point geometry of an octad, O6+(2) ≅ S8 inside Sp6(F2), and the genus-4 Artin–Schreier family y² + y = λ9x⁹ + λ5x⁵ + λ3x³ + λ1x whose polar operator has a six-dimensional kernel.
 
+Contents (scripts in `code/`, their outputs in `data/`, documents in `results/`):
+
 * `PROOF_GENUS4_HEXAD.md` — complete proofs: polar identity, L' = x⁸B28² + B28 + 1 (general λ9), the coset-sum theorem (γ_w⁴ = B28(w), (wγ_w)² = γ_w), the torsor theorem (canonical ω, Arf rule), the sixty-four-point lemma.
 * `paper/b28_torsor.tex` (.pdf) — paper draft: "The degree-28 polynomial of a genus-4 linearised operator, the quadratic-form torsor, and the symplectic monodromy Sp6(F2)".
 * `trace_parity_g4.py` → `trace_parity_g4.txt` — the unconditional trace parity theorem Tr_{q^m/2}(w) ≡ mk + f_m, verified on every rational coset point, q ≤ 8 (7880 points, 0 violations).
@@ -24,19 +26,36 @@ Independent exploration (not part of the Legendre-interval series Parts I–IV):
 * `coset_signs.py` → `coset_signs_g2.txt`, `coset_signs_g4.txt` — ε from one lift per point; the quadratic-form torsor (Q_P quadratic, canonical ω = Tr(d_b T'(d_a)), Arf rule) for all λ at q = 2, 4, 8 in genus 2 (recovers B) and genus 4; interpolation of the canonical factor F₊ = B28.
 * `b28_identity.py` → `b28_identity.txt` — exact division L' + 1 = B28 (x⁸ B28 + 1) in F2[λ5, λ3][x]; verification of ε = +1 ⟺ B28(w) = 0 at q = 16, 32.
 
-Requirements: Python 3, numpy, sympy. Run from this directory:
+## Layout
 
 ```
-python octad_combinatorics.py > octad_combinatorics.txt
-python genus_check.py > genus_check.txt
-python ore_algebra_k6.py > ore_algebra_k6.txt
-python sp6_module_types.py > sp6_module_types.txt      # 2 minutes, 1 GB
-python genus4_class_stats.py 9 > genus4_class_stats.txt # q up to 512, 6 minutes
-python octad_sum_test.py > octad_sum_test.txt
-python find_octic_identity.py 3 > find_octic_identity.txt
-python coset_signs.py 2 3 > coset_signs_g2.txt
-python coset_signs.py 4 3 > coset_signs_g4.txt             # 5 minutes
-python b28_identity.py > b28_identity.txt                  # 10 minutes (q = 32 in F_{2^300})
+code/      all Python scripts (self-contained: gf2n.py is the finite-field layer)
+data/      the outputs of every script quoted in the paper (.txt, .json)
+figures/   fig_torsor.pdf, fig_phases.pdf (the tower diagram is TikZ inside the tex)
+paper/     b28_torsor.tex / .pdf
+results/   OCTAD_THEORY.md (memo), PROOF_GENUS4_HEXAD.md (complete proofs)
+```
+
+Requirements: Python 3, numpy, sympy, matplotlib. Run from `code/`; the scripts that write files put them in `data/` and `figures/` themselves, the others print to stdout:
+
+```
+cd code
+python octad_combinatorics.py > ../data/octad_combinatorics.txt
+python genus_check.py > ../data/genus_check.txt
+python ore_algebra_k6.py > ../data/ore_algebra_k6.txt
+python sp6_module_types.py > ../data/sp6_module_types.txt        # 2 minutes, 1 GB; writes data/sp6_module_types.json
+python genus4_class_stats.py 9 > ../data/genus4_class_stats.txt  # q up to 512, 6 minutes; writes data/genus4_counts.json
+python octad_sum_test.py > ../data/octad_sum_test.txt
+python find_octic_identity.py 3 > ../data/find_octic_identity.txt
+python coset_signs.py 2 3 > ../data/coset_signs_g2.txt
+python coset_signs.py 4 3 > ../data/coset_signs_g4.txt           # 5 minutes
+python b28_identity.py > ../data/b28_identity.txt                # 10 minutes (q = 32 in F_{2^300})
+python trace_parity_g4.py 3 > ../data/trace_parity_g4.txt
+python genus4_sign_rules.py 3 > ../data/genus4_sign_rules.txt    # writes data/genus4_sign_rules_q*.json
+python make_sign_table.py                                        # inserts Table 2 into paper/b28_torsor.tex
+python witt_lpoly_g4.py 2                                        # writes data/witt_lpoly_g4.txt/.json
+python make_figures_b28.py                                       # writes figures/fig_torsor.pdf, fig_phases.pdf
+cd ../paper && pdflatex b28_torsor.tex && pdflatex b28_torsor.tex
 ```
 
 Main result so far: the genus-4 coset T'^{-1}(1) is canonically a torsor of quadratic forms on K = F2⁶; its 28 minus-type points are the roots of B28(x) = x²⁸ + λ5⁴x¹² + x¹⁰ + λ3⁴x⁴ + λ5²x² + x + 1, with L' = x⁸B28² + B28 + 1, the exact analogue of the hexad polynomial of Part III.

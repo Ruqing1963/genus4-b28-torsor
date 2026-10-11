@@ -17,8 +17,13 @@ def tex_val(s):
     return "$" + s.replace("+", "+").replace("-", "-") + "$"
 
 
+HERE = os.path.dirname(os.path.abspath(__file__))
+DATA = os.path.join(HERE, "..", "data")
+TEX = os.path.join(HERE, "..", "paper", "b28_torsor.tex")
+
+
 def load(q):
-    fn = f"genus4_sign_rules_q{q}.json"
+    fn = os.path.join(DATA, f"genus4_sign_rules_q{q}.json")
     return json.load(open(fn, encoding="utf-8")) if os.path.exists(fn) else {}
 
 
@@ -55,12 +60,12 @@ type & $q$ & \#par. & $d$ & $f_d$ & $r_d$ & $\#\lambda_1$ & $|s_{2d}|/q^d$ & $W_
 \bottomrule
 \end{tabular}
 \end{table}"""
-    tex = open("paper/b28_torsor.tex", encoding="utf-8").read()
+    tex = open(TEX, encoding="utf-8").read()
     if "%%SIGNTABLE%%" in tex:
         tex = tex.replace("%%SIGNTABLE%%", "%%SIGNTABLE-BEGIN%%\n" + table + "\n%%SIGNTABLE-END%%")
     else:
         tex = re.sub(r"%%SIGNTABLE-BEGIN%%.*?%%SIGNTABLE-END%%", lambda m: "%%SIGNTABLE-BEGIN%%\n" + table + "\n%%SIGNTABLE-END%%", tex, flags=re.S)
-    open("paper/b28_torsor.tex", "w", encoding="utf-8").write(tex)
+    open(TEX, "w", encoding="utf-8").write(tex)
     print(f"{len(rows)} rows written")
 
 

@@ -11,6 +11,7 @@ the figure.  Output: witt_lpoly_g4.json, witt_lpoly_g4.txt.    Usage: python wit
 """
 import cmath
 import json
+import os
 import sys
 from fractions import Fraction
 
@@ -98,10 +99,11 @@ def main():
                     lines.append(f"  (l5,l3,l1)=({l5},{l3},{l1}) type {cls:12s} Frob order {n:2d}: e in Z[i] {integral}, "
                                  f"s_9,s_10 predicted {rank_ok}, |omega|=sqrt q {bool(np.allclose(absq, 1, atol=1e-6))}, "
                                  f"(omega/sqrt q)^N = 1 for N = {N};  L(T) = {['%+d%+di' % (c.real, c.imag) for c in coeffs]}")
-    with open("witt_lpoly_g4.json", "w", encoding="utf-8") as f:
+    DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data")
+    with open(os.path.join(DATA, "witt_lpoly_g4.json"), "w", encoding="utf-8") as f:
         json.dump(out, f)
     txt = "\n".join(lines)
-    with open("witt_lpoly_g4.txt", "w", encoding="utf-8") as f:
+    with open(os.path.join(DATA, "witt_lpoly_g4.txt"), "w", encoding="utf-8") as f:
         f.write(txt + "\n")
     print(txt)
     print(f"\nall e in Z[i]: {all(o['integral'] for o in out)};  rank 8 confirmed by s_9, s_10 in all cases: {all(o['rank8_ok'] for o in out)};"

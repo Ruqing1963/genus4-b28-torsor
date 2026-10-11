@@ -112,7 +112,9 @@ def main():
         out.append({"type": [[p, list(r)] for p, r in inv], "label": divisors_label(inv), "count": cnt,
                     "fraction": cnt / G, "in_S8": inv in types_S8, "in_O6minus": inv in types_Om,
                     "S8_classes": inv_to_classes.get(inv, [])})
-    with open("sp6_module_types.json", "w", encoding="utf-8") as f:
+    import os
+    DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data")
+    with open(os.path.join(DATA, "sp6_module_types.json"), "w", encoding="utf-8") as f:
         json.dump(out, f, indent=1)
     print(f"{'count':>8s} {'fraction':>9s}  S8  O6-  S8 classes            elementary divisors")
     for o in out:

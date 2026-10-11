@@ -23,6 +23,9 @@ from matplotlib.patches import FancyArrowPatch
 
 from coset_signs import analyse
 
+HERE = os.path.dirname(os.path.abspath(__file__))
+DATA = os.path.join(HERE, "..", "data")
+FIGURES = os.path.join(HERE, "..", "figures")
 plt.rcParams.update({"font.size": 9, "font.family": "serif", "mathtext.fontset": "cm", "pdf.fonttype": 42,
                      "ps.fonttype": 42})
 DARK, LIGHT, GRID = "#1f3a5f", "#d9b99b", "#bbbbbb"
@@ -136,13 +139,13 @@ def figure1():
     ax.set_title(f"(b) Frobenius $x\\mapsto x^2$ (type $7\\,1$): one fixed point and nine 7-cycles,\n"
                  f"{nroot} among the roots of $B_{{28}}$, {9 - nroot} among the plus-type points", fontsize=7.5)
     fig.tight_layout()
-    fig.savefig("paper/fig_torsor.pdf")
+    fig.savefig(os.path.join(FIGURES, "fig_torsor.pdf"))
     plt.close(fig)
     print("fig_torsor.pdf written")
 
 
 def figure2():
-    data = json.load(open("witt_lpoly_g4.json", encoding="utf-8"))
+    data = json.load(open(os.path.join(DATA, "witt_lpoly_g4.json"), encoding="utf-8"))
     want = ["7 1", "8", "5 2 1", "non-octad(9)", "5 3", "6 1 1"]
     titles = {"non-octad(9)": r"$\Phi_9$ (order 9, no octad)"}
     fig, axes = plt.subplots(2, 3, figsize=(7.2, 5.0))
@@ -179,14 +182,14 @@ def figure2():
     fig.suptitle(r"Normalised Frobenius eigenvalues $\omega_i/\sqrt{q}$ of the rank-8 Witt sheaf, $q=4$: "
                  r"$\lambda_1=0$ filled, $\lambda_1=1$ open", fontsize=8)
     fig.tight_layout()
-    fig.savefig("paper/fig_phases.pdf")
+    fig.savefig(os.path.join(FIGURES, "fig_phases.pdf"))
     plt.close(fig)
     print("fig_phases.pdf written")
 
 
 if __name__ == "__main__":
     figure1()
-    if os.path.exists("witt_lpoly_g4.json"):
+    if os.path.exists(os.path.join(DATA, "witt_lpoly_g4.json")):
         figure2()
     else:
         print("run witt_lpoly_g4.py first for figure 2")
