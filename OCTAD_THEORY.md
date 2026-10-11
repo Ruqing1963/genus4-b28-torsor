@@ -126,6 +126,8 @@ s_{2m}(λ) = q^m Σ_{w ∈ C ∩ F_{q^m}} (−1)^{[B28(w) ≠ 0]} i^{𝔮^{(m)}(
 
 presumably by the Part IV argument with γ_w² = B28(w).
 
+**5.5′ All of this is now proved** (`PROOF_GENUS4_HEXAD.md`, paper `paper/b28_torsor.tex`). General λ9: B28(x) = λ9⁴x²⁸ + λ5⁴x¹² + λ9²x¹⁰ + λ3⁴x⁴ + λ5²x² + λ9x + 1 is the unique solution of x⁸B² + B = L' + 1 (coefficient recursion b_d = c_d + b²_{(d−8)/2}), and L' = x⁸B28² + B28 + 1 is a one-line expansion (the monomials x²⁸, x¹², x¹⁰ cancel). The coset-sum theorem is proved by Part IV's three steps with the power sums p₇ = w⁷ + Nw⁵ + N³w, p₉ = w⁹ + Nw⁷ + N²w⁵ + N⁴w and γ_w = 1 + λ9w⁷ + (λ9w⁵)^{1/2} + (λ9w)^{1/4} + λ5w³ + (λ5w)^{1/2} + λ3w, for which **γ_w⁴ = B28(w)** and (wγ_w)² = γ_w, so γ_w ∈ {0, w⁻²} and ε(w) = +1 iff B28(w) = 0 (numerically re-checked on every coset point for five parameters with λ9 ≠ 1 included). The torsor theorem is proved too: Tr = 0 on K because 𝔮|K is additive hence 2-torsion valued; ω is the descent of β(x, y) = Tr(yT'(x)) from Ṽ = Tr⁻¹(K) ⊂ F_{q^{2m}} to Ṽ/F_{q^m} ≅ K, nondegenerate by the dimension count dim Ṽ^⊥ = 2mk − (mk+6) + 6 = mk = dim F_{q^m}; the Arf rule follows from Σ_C ε = 28 − 36 = −8 and the Gauss sum Σ_k (−1)^{Q_w(k)} = ±8. Corollary: s_{2m} = ±8 q^m i^p whenever C ⊂ F_{q^m}. Numerically, F₊ = B28/λ9⁴ also for λ9 ∉ {0, 1} at q = 4, 8 (16 random parameters).
+
 **5.6 What the octad is, then.** The 28 roots of B28 are the 28 nonsingular points (duads) of *any* octad structure compatible with (ω, a plus-type form Q): for a plus-type point P ∈ C, the map k ↦ P + k identifies {k : Q_P(k) = 1} (28 duads of the S8-structure defined by Q_P) with the roots of B28. So "duads ↔ roots of B28" and "tetrads and 0 ↔ roots of x⁸B28 + 1 shifted by P"; the eight points of an octad are not in C at all in a canonical way, which is why B8 does not exist (Section 4) while B28 does. The user's octic programme is therefore replaced by: B28 plays the role of B, the triads play no role, and the sixteen-point lemma becomes the Arf-invariant count on the torsor.
 
 ## 6. Programme (updated)
@@ -133,8 +135,8 @@ presumably by the Part IV argument with γ_w² = B28(w).
 1. ~~Derive T'~~ done (5.1).
 2. ~~Frobenius table~~ done (4.1); still open: why the counts are not polynomial in q.
 3. ~~Intrinsic symplectic form~~ done (5.4): ω(a, b) = Tr(d_b T'(d_a)), canonical; prove it in general (the proof is the computation in 5.4 plus the trace-parity fact Tr(k) = 0 on K ∩ F_{q^m}, needed for ω(a, a) = 0).
-4. **Prove the genus-4 hexad formula** (5.5): ε(w) = +1 iff B28(w) = 0. Route: Part IV's proof with B28 in place of B (γ_w² = B28(w), (wγ_w)^{2^?} = γ_w), or directly: ε(w) = −(−1)^{Arf Q_w} and Q_w minus-type iff B28(w) = 0, the latter being the statement that the plus-type points are exactly the roots of x⁸B28 + 1.
-5. **Prove L' = x⁸B28² + B28 + 1** from the structure of T' (in Part III this came from the deformation L + εx⁴ ↔ uA + √ε; here the natural guess is the same with x⁸ and a "Bluher-type" polynomial of degree 27: B28 = xA27 + 1, A27 = x²⁷ + λ5⁴x¹¹ + x⁹ + λ3⁴x³ + λ5²x + 1).
+4. ~~Prove the genus-4 hexad formula~~ done (5.5′, `PROOF_GENUS4_HEXAD.md` Theorem 3): γ_w⁴ = B28(w), (wγ_w)² = γ_w.
+5. ~~Prove L' = x⁸B28² + B28 + 1~~ done (one-line expansion; general λ9). The torsor theorem and the Arf rule are proved as well (Theorem 4 there).
 6. **Trace parity, sign rules, class-by-class signs** as in Part IV, now on the 28 + 36 torsor with Sp6(F2) symmetry: the analogue of Table 2 (Frobenius types, 4.1), the analogue of the hexad terms table, and the analogue of Theorems 3.9, 3.17, 3.20 for the 24 Frobenius types.
 7. Only then: the Legendre-interval degree governed by the x⁹ family (d = 10 if the pattern of Parts I–III persists) and its constant.
 

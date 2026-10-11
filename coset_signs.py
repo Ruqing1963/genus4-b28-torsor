@@ -31,10 +31,10 @@ from ore_algebra_k6 import Ore, frobenius_order
 I4 = [1, 1j, -1, -1j]
 
 
-def setup(genus, Fq, l5, l3):
-    """Ore kernel polynomial P (tau-coefficients) and the number n with dim K = 2n"""
+def setup(genus, Fq, l5, l3, lt=1):
+    """Ore kernel polynomial P (tau-coefficients) and the number n with dim K = 2n; lt = l9 (genus 4)"""
     if genus == 4:
-        P = [1, Fq.mul(l5, l5), Fq.pow(l3, 4), 1, Fq.pow(l3, 8), Fq.pow(l5, 8), 1]
+        P = [lt, Fq.mul(l5, l5), Fq.pow(l3, 4), 1, Fq.pow(l3, 8), Fq.pow(l5, 8), Fq.pow(lt, 8)]
         return P, 3
     # genus 2: T'(x) = l5 x^4 + l3 x^2 + x + (l3 x)^{1/2} + (l5 x)^{1/4};  T'^4 = l5^4 x^16 + l3^4 x^8 + x^4 + l3^2 x^2 + l5 x
     P = [l5, Fq.mul(l3, l3), 1, Fq.pow(l3, 4), Fq.pow(l5, 4)]
@@ -80,14 +80,14 @@ class Family:
         return (self.E.witt(w, nconj) + 2 * self.E.tr_n(self.f(w), nconj)) % 4
 
 
-def analyse(genus, k, l5, l3, verbose=True):
+def analyse(genus, k, l5, l3, verbose=True, lt=1):
     Fq = GF(k)
     O = Ore(Fq)
-    P, n = setup(genus, Fq, l5, l3)
+    P, n = setup(genus, Fq, l5, l3, lt)
     m = frobenius_order(O, P, k)
     N = 2 * m * k
     E = BigGF(N, tables=False)
-    fam = Family(genus, E, k, l5, l3)
+    fam = Family(genus, E, k, l5, l3, lt)
     Lp = lambda x: E.frob(fam.Tp(x), n)  # L' = T'^{2^n}
     cols = E.linear_map_matrix(Lp)
     K = E.kernel(cols)
@@ -175,7 +175,7 @@ def analyse(genus, k, l5, l3, verbose=True):
     assert all(cc in fam.back for cc in Fp)
     Fp_q = [fam.back[cc] for cc in Fp]
     res = dict(m=m, sizes=(len(Cp), len(Cm)), stable=stable, qf=qf_ok, same_omega=same_omega, alt=alt, nondeg=nondeg,
-               arf=arf_ok, intrinsic=intrinsic_ok, Fplus=Fp_q)
+               arf=arf_ok, intrinsic=intrinsic_ok, Fplus=Fp_q, E=E, fam=fam, C=C, eps=eps, K=Klist)
     if verbose:
         print(f"  (l5,l3)=({l5},{l3}): Frob order {m:2d}, |C_+|={len(Cp)}, |C_-|={len(Cm)}, eps Frobenius-stable {stable}, "
               f"Q_P quadratic {qf_ok}, polar form independent of P {same_omega}, alternating {alt}, nondegenerate {nondeg}, "
