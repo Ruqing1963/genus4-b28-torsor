@@ -304,6 +304,17 @@ def octad_report():
     nk = int(keep.sum())
     print(f"elements of Sp_6(F_2) preserving at least one plus-type form (= lying in a conjugate of S_8): {nk} "
           f"of {len(P)}  ({nk / len(P):.4f});  orders of the others: {dict(sorted(Counter(orders[~keep].tolist()).items()))}")
+    # the minus-type forms: every element of Sp_6(F_2) preserves some quadratic form
+    Fm = np.array([[M.Q0[v] ^ M.IP[c][v] for v in range(n)] for c in range(n)
+                   if [M.Q0[v] ^ M.IP[c][v] for v in range(n)].count(0) == 28], dtype=np.uint8)
+    keep_m = np.zeros(len(P), dtype=bool)
+    for s in range(0, len(P), step):
+        Pc = P[s:s + step].astype(np.int64)
+        keep_m[s:s + step] = (Fm[:, Pc] == Fm[:, None, :]).all(axis=2).any(axis=0)
+    stab_m = int((Fm[0][P] == Fm[0][None, :]).all(axis=1).sum())
+    print(f"elements preserving at least one minus-type form: {int(keep_m.sum())};  preserving no quadratic form at all: "
+          f"{int((~keep & ~keep_m).sum())};  stabiliser of one minus-type form: {stab_m} = |O_6^-(F_2)| = 51840: {stab_m == 51840}")
+    print(f"all elements outside every conjugate of S_8 preserve a minus-type form: {bool((keep | keep_m).all())}")
     print(f"(group statistics {time.time() - t2:.1f} s)")
     # the coset: odd subsets modulo complement
     odd = {M.canon(sum(1 << i for i in S)) for j in (1, 3) for S in itertools.combinations(range(8), j)}
